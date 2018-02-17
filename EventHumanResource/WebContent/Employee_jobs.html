@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Jobs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="Scripts\jquery.js"></script>
+   <script src="Scripts\job.js"></script>
+    <style type="text/css">
+    	       @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+     body {
+    
+    font-family: 'Raleway', sans-serif;
+}
+    	header {
+    box-sizing: border-box;
+    background: #fff;
+    color: #555f66;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 4em 0 rgba(0,0,0,.8);
+    z-index:99999;
+	}
+	header h1 {
+    color: #666f77;
+    font-weight: 700;
+    left: 2.25em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+}
+
+header nav {
+    position: absolute;
+    right: 3.25em;
+    top: 0;
+    vertical-align: middle;
+    
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding-left:0;
+    float: right;
+    /*position: absolute;
+   /*width: 100%;*/
+}
+
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+    margin-left: 1em;
+   /*float: right;
+    margin-right: 1px;
+   /* width: 100%;
+*/
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    /*background: #2f3036;*/
+    text-decoration: none;
+    width: 100
+}
+
+.button {
+    
+    
+    background-color: #206010;
+    border-radius: 5px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    font-size: 0.9em;
+    height: 2.85em;
+    line-height: 2.85em;
+    padding: 0 1.75em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    text-indent: 0.25em;
+
+}
+
+/*.dropdown {
+    float: left;
+    overflow: hidden;
+}
+*/
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: green;
+}
+div {
+	display: block;
+}
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(32, 96, 16, 0.72);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 3px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(22, 220, 22);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+table, td, th {    
+    border: 3px solid #ddd;
+    text-align: center;
+   font-family: sans-serif;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 32px;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover{background-color:#f5f5f5}
+.tabl {
+    margin-top: 9em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.heading{
+	color: black;
+	font-size: 25px;
+}
+#tab{
+	padding-bottom:90px;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+<header>
+    <h1 class="logo"><a href="#">HRS</a></h1>
+    <nav>
+        <ul id="menu">
+        <li>
+          <div class="dropdown">
+          	<div class="chip">
+  					<img src="images/avatar.png" alt="Person" width="30" height="30" class="dropbtn">
+  					<div class="chip" id="prof_name"></div>
+						</div>
+			   <!-- <button class="dropbtn">Dropdown</button>-->
+			    <div class="dropdown-content">
+			     
+			      <a href="Employee_profile.html" class="button special">My profile</a>
+			      <a href="Employee_prof_update.html" class="button special">profile Update</a>
+			      <a href="Employee_job_search.html" class="button special">Job search</a>
+			      <a href="#" class="button special" id='logout'>logout</a>
+			    </div>
+  			</div> 
+        </li>
+    </ul>
+    </nav>
+</header>
+
+
+</head>
+<body>
+
+
+
+<div class="tabl">
+
+<h3 class="heading">Applied Jobs</h3>
+<table class="job1">
+
+
+  <tr>
+   <!--  <th>ID</th> -->
+    <th>Domain</th>
+    <th>Mode</th>
+    <th>Event Date</th>
+    <th>Employer name</th>
+    <!-- <th>Contact</th> -->
+    <th>Address</th>
+    <th>Payment &#8377;</th>
+  </tr>
+
+
+	
+	 
+
+</table>
+
+</div>
+
+
+
+<div class="tabl" id="tab">
+
+<h3 class="heading">Alloted Jobs</h3>
+
+<table class="job2">
+  <tr>
+    <!-- <th>ID</th> -->
+    <th>Domain</th>
+    <th>Mode</th>
+    <th>Event Date</th>
+    <th>Employer name</th>
+    <th>Contact</th>
+    <th>Address</th>
+    <th>Payment &#8377;</th>
+  </tr>
+  
+</table>
+</div>
+
+
+
+
+</body>
+</html>

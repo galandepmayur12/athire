@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nav_bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <!--<label for="show-menu" class="show-menu">Show Menu</label>-->
+   <!--<input type="checkbox" id="show-menu" role="button">-->
+    <h1 class="logo"><a href="#">HRS</a></h1>
+    <nav>
+        <ul id="menu">
+        <li><a href="#" class="button special">Home</a></li>
+        
+        <li><a onclick="document.getElementById('id01').style.display='block'" class="button special">Login</a></li>
+        <li>
+            <a href="#" class="button special">Sign up</a>
+            <ul class="hidden">
+                <li><a onclick="document.getElementById('id03').style.display='block'">Employee</a></li>
+                <li><a onclick="document.getElementById('id04').style.display='block'">Employer</a></li>
+            </ul>
+        </li>
+    </ul>
+    </nav>
+</header>
+
+<div id="id03" class="modal3">
+
+ <form  class="modal-content3 animate3" name="registration">
+ <div class="imgcontainer1">
+<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+</div>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <div class="short">
+          <label>First Name:</label>
+          <input type="text" name="user_fname">
+          <label for="lname">Last Name:</label>
+          <input type="text" id="name" name="user_lname">
+    <label>Mobile no.:</label>
+          <input type="text" name="user_mob">
+          
+          </div>
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email">
+          <div class="short">
+          <label for="dob" >DOB: </label>
+          <input type="text" placeholder="DD/MM/YYYY">
+          <label for="city" >City: </label>
+          <input type="text" placeholder="">
+          </div>
+          
+          <!--<label for="password">Password:</label>
+          <input type="password" id="password" name="user_password">-->
+          
+          
+         <!-- <label for="bio">Address:</label>
+          <textarea id="bio" name="user_add"></textarea>-->
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label>Profession:</label><br>
+   
+          <div style="height: 6em; width: 30em; overflow: auto;">
+              <input type="checkbox" id="development" value="interest_development" name="user_interest">
+              <label class="light" for="development">Photographer</label><br>
+              <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Choreographer</label><br>
+                
+              <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Anchor</label><br><br>
+             
+              <input type="checkbox" id="business" value="interest_business" name="user_interest"> <label class="light" for="business">Designer</label><br>
+              <input type="checkbox" id="business" value="interest_business" name="user_interest"> <label class="light" for="business">Volunteer</label><br>
+              <input type="checkbox" id="business" value="interest_business" name="user_interest"> <label class="light" for="business">Promoter</label><br>
+          </div>
+        
+          <label for="job">Want to work :</label>
+        <select id="job" name="user_job">
+            <option value="
+            Individual">Individually</option>
+            <option value="team">In team</option>
+            <option value="both">Individually and in team</option>
+        </select>
+   
+        </fieldset>
+        <button type="submit" name="submit" value="submit">Register</button>
+  
+      </form>
+      </div>
+
+<!--Emplyoer-->
+
+<div id="id04" class="modal3">
+
+ <form  class="modal-content3 animate3" name="registration">
+ <div class="imgcontainer1">
+<span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+</div>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <div class="short">
+          <label>First Name:</label>
+          <input type="text" name="user_fname">
+          <label for="lname">Last Name:</label>
+          <input type="text" id="name" name="user_lname">
+    <label>Mobile no.:</label>
+          <input type="text" name="user_mob">
+          
+          </div>
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email">
+          <div class="short">
+          <label for="dob" >DOB: </label>
+          <input type="text" placeholder="DD/MM/YYYY">
+          <label for="city" >City: </label>
+          <input type="text" placeholder="">
+          </div>
+          
+          <!--<label for="password">Password:</label>
+          <input type="password" id="password" name="user_password">-->
+          
+          
+         <!-- <label for="bio">Address:</label>
+          <textarea id="bio" name="user_add"></textarea>-->
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label>Company name:</label><br>
+          <input type="text" name="user_company">
+ 
+        
+         
+   
+        </fieldset>
+        <button type="submit" name="submit" value="submit">Sign up</button>
+  
+      </form>
+      </div>
+
+
+
+<!--MODAL-->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<!-- BANNER -->
+
+
+<section class="banner">
+    <div class="container">
+    <h1 class="title">Human Resource Services</h1>
+    <p class="para">Photographers,Anchors,Decorators,Volunteers,Singers,Brand promorters,Musicians </p>
+    <ul class="actions">
+        <li><a onclick="document.getElementById('id02').style.display='block'" class="button button-hire">Want to hire?</a></li>
+        <li><a href="get_hired.html" class="button button-hire">Get hired?</a></li>
+    </ul>
+    </div>
+</section>
+
+
+<!-- INTRO -->
+
+<div class="container">
+  <section class="home-about">
+    <div class="home-about-textbox">
+      <h1>What We Do</h1>
+      <p><strong>We find and recruit </strong>college students,professionals ,enthusiasts ,energetic and talented people from all over the city and provide them the easy way to find freelance/part time jobs to earn and learn as well <br>
+      <strong>We provide </strong> a great and easy way for people wanting to conduct any kind of events ,parties,social work or any brand promotions </p>
+      
+
+    </div>
+  </section>
+</div>
+
+
+<!--  SLIDESHOW / FEEDBACK-->
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="../images/1.jpg" style="width:100%">
+  <div class="text">Feedback here</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="../images/2.jpg" style="width:100%">
+  <div class="text">Feedback here</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="../images/3.jpg" style="width:100%">
+  <div class="text">Feedback here</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:left;">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+    <div class="col-1">
+      <ul class="unstyled-list">
+      <li>Usefull links-</li>
+      <li><a href="about_us.html">About us</a></li>
+      <li><a href="contact.html">contact us</a></li>
+      <li><a href="about_us.html">About us</a></li>
+      </ul>
+    </div>
+    <!--<div class="col-2">
+      <ul class="unstyled-list">
+      <li>Follow us on-</li>
+      <li><a href="about_us.html">About us</a></li>
+      <li><a href="contact.html">contact us</a></li>
+      <li><a href="about_us.html">About us</a></li>
+      </ul>
+    </div>-->
+  </div>
+</footer>
+
+  <!--Want to hire MODAL-->
+
+<div id="id02" class="modal1">
+
+<form class="modal-content1 animate1" action="/action_page.php">
+    <div class="imgcontainer1">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+  <div class="outer">
+  <div class="inner"></div>
+</div>
+        <div class="container1">
+    
+      <ul class="ulist">
+      <li class="list1"><p class="para1">wide range of pre defined packages to choose from</p></li>
+      <li class="list2"><div class="outer">
+  <div class="inner"></div>
+</div></li>
+      <li class="list3"><p class="para1">create your own custom package,single and multiple selection </p></li>
+      
+      </ul>
+    </div>
+        
+      <ul class="actions1">
+        <li><a href="packages.html" class="button button-hire">Packages</a></li>
+        <li><a href="custom.html" class="button button-hire">Custom</a></li>
+    </ul>
+
+
+    <div class="container" >
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+  </div>
+
+
+
+
+
+
+
+
+<!-- SCRIPT-LOGIN -->
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+var modal = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+var modal = document.getElementById('id04');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+//Slideshow
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

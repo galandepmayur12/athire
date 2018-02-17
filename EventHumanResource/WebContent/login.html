@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script src="Scripts/jquery.js"></script>
+   <script src="Scripts/login.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+
+                body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    
+}
+
+.modal{
+  margin-top: 8em;
+}
+     input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #206010;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.modal-content {
+    /*background-color: #fefefe;*/
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    /*border: 1px solid #888;*/
+    width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+ul {
+    list-style-type:none;
+    
+}
+
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+
+}
+/*Style for menu links*/
+#link2 li a {
+    display:block;
+   width:160%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #206010;
+    text-decoration: none;
+    
+}
+
+li.list1 {
+  margin-left: -2em;
+    float: left;
+}
+li.list3 {
+  float: right;
+  margin-right: 2em;
+  
+}
+li.list2 {
+      margin-right: -10em;
+    }
+
+
+
+
+                /* ##############3 header bar  ###############################3*/
+
+
+
+                /*Strip the ul of padding and list styling*/
+
+                header {
+                    box-sizing: border-box;
+                    background: #fff;
+                    color: #555f66;
+                    height: 5em;
+                    left: 0;
+                    line-height: 5em;
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    box-shadow: 0 0 4em 0 rgba(0,0,0,.8);
+                    z-index:99999;
+                }
+
+                header h1 {
+                    color: #666f77;
+                    font-weight: 700;
+                    left: 2.25em;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                    text-decoration: none;
+                }
+                header nav {
+                    position: absolute;
+                    right: 3.25em;
+                    top: 0;
+                    vertical-align: middle;
+                    
+                }
+
+
+                ul.menu {
+                    list-style-type:none;
+                    margin:0;
+                    padding-left:0;
+                    float: right;
+                    /*position: absolute;
+                   /*width: 100%;*/
+                }
+
+                /*Create a horizontal list with spacing*/
+                li.menu1 {
+                    display:inline-block;
+                    margin-left: 1em;
+                   /*float: right;
+                    margin-right: 1px;
+                   /* width: 100%;
+                */
+                }
+                /*Style for menu links*/
+                li.menu1 a {
+                    display: block;
+                    min-width: 140px;
+                   /* height: 50px;*/
+                    text-align: center;
+                    line-height: 50px;
+                    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    color: #fff;
+                    text-decoration: none;
+                    background-color: #206010;
+                    border-radius: 5px;
+                    /*border: 0;
+                    cursor: pointer;
+                    font-weight: 300;*/
+                    text-transform: uppercase;
+                    letter-spacing: 0.125em;
+                    font-size: 0.9em;
+                  /*  padding: 0 1.75em;
+                    white-space: nowrap;*/
+                    text-indent: 0.25em;
+
+                }
+                /*Hover state for top level links*/
+                li.menu1:hover a {
+                    background: #19c589;
+                }
+
+
+                header h1 {
+                    color: #666f77;
+                    font-weight: 700;
+                    left: 5.25em;
+                    height: inherit;
+                    line-height: inherit;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                }
+                h1,h2 {
+                    color: #fff;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 0.125em;
+                }
+
+
+                /*##############################################3*/
+label {
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.valid{
+	color:red;
+}
+
+   </style>
+</head>
+
+
+<body>
+
+      <header>
+          <!--<label for="show-menu" class="show-menu">Show Menu</label>-->
+         <!--<input type="checkbox" id="show-menu" role="button">-->
+          <h1 class="logo"><a href="#">HRS</a></h1>
+          <nav>
+              <ul class="menu">
+              <li class="menu1"><a href="index.html" class="b">Home</a></li>
+              <li class="menu1"><a href="login.html" class="b">Login</a></li>
+              <li class="menu1"><a href="signup.html" class="b">Sign up</a></li>
+              </ul>
+          </nav>
+      </header>
+
+
+
+
+<div class="modal">
+  
+  <form class="modal-content animate" >
+              
+              <div class="imgcontainer">
+                      <img src="images/avatar.png" alt="Avatar" class="avatar">
+              </div>
+
+              <div class="container">
+                      <label>Username</label>
+                      <input type="text" id="mail" placeholder="Enter Username" name="uname" required>
+					<div class='valid' id="mail1"></div>
+                      <label  style="float: centre;">Password</label>
+                      <input type="password" id="pass" placeholder="Enter Password" name="psw" required>
+                        <div class='valid' id="pass1"></div>
+                      <button type="submit" id="submit"><label>LOGIN</label></button>
+                      <input type="checkbox" checked="checked"> Remember me
+              </div>
+
+              <div class="container" id="link2">
+                      <ul>
+                                <li class="list1"><a href="index.html" >CANCEL</a></li>
+                                <li class="list2">new?</li>
+                                <li class="list3"><a href="signup.html" >SIGNUP</a></li>
+                      </ul>                    
+              </div>
+              
+              
+             <a href="forgotPass.html" style="float: right;">Forgot Password?</a> 
+  </form>
+</div>
+</body>

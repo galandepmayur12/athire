@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/cookie_jquery.js"></script>
+    <script src="Scripts/profile.js"></script>
+    <style type="text/css">
+    	     @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+     body {
+    
+    font-family: 'Raleway', sans-serif;
+}
+    	header {
+    box-sizing: border-box;
+    background: #fff;
+    color: #555f66;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 4em 0 rgba(0,0,0,.8);
+    z-index:99999;
+	}
+	header h1 {
+    color: #666f77;
+    font-weight: 700;
+    left: 2.25em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+}
+
+header nav {
+    position: absolute;
+    right: 3.25em;
+    top: 0;
+    vertical-align: middle;
+    
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding-left:0;
+    float: right;
+    /*position: absolute;
+   /*width: 100%;*/
+}
+
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+    margin-left: 1em;
+   /*float: right;
+    margin-right: 1px;
+   /* width: 100%;
+*/
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    /*background: #2f3036;*/
+    text-decoration: none;
+    width: 100
+}
+
+.button {
+    
+    
+    background-color: #206010;
+    border-radius: 5px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    font-size: 0.9em;
+    height: 2.85em;
+    line-height: 2.85em;
+    padding: 0 1.75em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    text-indent: 0.25em;
+
+}
+
+/*.dropdown {
+    float: left;
+    overflow: hidden;
+}
+*/
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: green;
+}
+div {
+	display: block;
+}
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(32, 96, 16, 0.72);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 3px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(22, 220, 22);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+
+.imgcontainer {
+    text-align: center;
+   margin: 12em 0 0 0;
+   /* position: relative;*/
+   float: left;
+}
+
+img.avatar {
+    width: 50%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+
+.modal3 {
+                 
+                   background-color: rgba(0,0,0,0); /* Black w/ opacity */
+                    
+                }
+                .modal-content3 {
+                    background-color: #fefefe;
+                    width: 60%; /* Could be more or less, depending on screen size */
+                    padding-left: 40%;
+                    padding-top: 5em;
+                }
+           
+
+                .modal3 input[type="text"],input[type="password"],
+                input[type="date"],
+                input[type="datetime"],
+                input[type="email"],
+                input[type="number"],
+                input[type="tel"],
+                input[type="time"],
+                textarea,
+                select {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 70%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 30px;
+                }
+
+                .short input[type="text"],input[type="password"] {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 30%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 20px;
+                }
+                .modal3 input[type="radio"],
+                input[type="checkbox"] {
+                  margin: 0 0 8px 0;
+                  float: right;
+                }
+                .modal3 img {
+                  height: 800px;
+                  width: 800px;
+                }
+                .modal3 select {
+                  padding: 6px;
+                  height: 32px;
+                  border-radius: 2px;
+                }
+                .modal3 fieldset {
+                  margin-bottom: 30px;
+                  border: 5px solid #3ac162;
+                  margin: 2em 3em 2em 3em;
+
+                }
+                .modal3 legend {
+                  font-size: 1.5em;
+                  margin-bottom: 10px;
+                }
+                .modal3 label {
+                  display: block;
+                  margin-bottom: 8px;
+                  font-size: 1.5em;
+                  text-align: left;
+                }
+                .modal3 label.light {
+                  font-weight: 300;
+                  display: inline;
+                }
+                .number {
+                  background-color: #5fcf80;
+                  color: #fff;
+                  height: 30px;
+                  width: 30px;
+                  display: inline-block;
+                  font-size: 0.8em;
+                  margin-right: 4px;
+                  line-height: 30px;
+                  text-align: center;
+                  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+                  border-radius: 100%;
+                }
+                .short {
+                    
+                }
+                .short label {
+                    
+                }
+                .modal3 button {
+                  padding: 19px 39px 18px 39px;
+                  color: #FFF;
+                  background-color: #206010;
+                  font-size: 18px;
+                  text-align: center;
+                  font-style: normal;
+                  border-radius: 5px;
+                  width: 50%;
+                  border: 1px solid #206010;
+                  border-width: 1px 1px 3px;
+                  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+                  margin-bottom: 10px;
+                  margin-left: 25%;
+
+                }
+                ul.dob {
+                    list-style-type:none;
+                    margin:0;
+                    padding-left:0;
+                   float: left;
+                    /*position: absolute;
+                   /*width: 100%;*/
+                }
+
+                /*Create a horizontal list with spacing*/
+              /*  li {
+                    display:inline-block;
+                    margin-left: 4em;
+                    margin-right: 4em;
+
+                }*/
+               li.dd {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -1em;
+                   
+               }
+                  li.mm {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -1em;
+                    
+               }
+
+   li.yyyy {
+                display:inline-block;
+                    margin-left: 2px;
+                    
+               }
+
+             
+
+                ul.inline_ul {
+                        list-style-type:none;
+                        margin:0;
+                        padding-left:0;
+                        float: none;
+                        display: flex;
+                        /*position: absolute;
+                       /*width: 100%;*/
+                    }
+
+                    /*Create a horizontal list with spacing*/
+                  ul.inline_ul li {
+                        display:inline-block;
+                        margin-left: 1em;
+                       /*float: right;
+                        margin-right: 1px;
+                       /* width: 100%;
+                    */
+                    }
+
+
+                    li.user_name {
+                      display: block;
+                      font-size: x-large;
+                    }
+
+    </style>
+</head>
+<body>
+
+
+<header>
+    <h1 class="logo"><a href="#">HRS</a></h1>
+    <nav>
+        <ul id="menu">
+        <li>
+          <div class="dropdown">
+          	<div class="chip">
+  					<img src="images/avatar.png" alt="Person" width="30" height="30" class="dropbtn">
+						<div class="chip" id="prof_name"></div>
+						</div>
+			   <!-- <button class="dropbtn">Dropdown</button>-->
+			    <div class="dropdown-content">
+			     
+			      <a href="Employee_profile.html" class="button special">My profile</a>
+			      <a href="Employee_prof_update.html" class="button special">profile Update</a>
+			      <a href="Employee_job_search.html" class="button special">Job search</a>
+            <a href="Employee_jobs.html" class="button special">My Jobs</a>
+			      <a href="#" class="button special" id='logout'>logout</a>
+			    </div>
+  			</div> 
+        </li>
+    </ul>
+    </nav>
+</header>
+
+
+
+  <div class="imgcontainer">
+    <ul>
+        <li><img src="images/avatar.png" alt="Avatar" class="avatar"></li>
+        <li class="user_name" id="uname"></li>
+    </ul>
+                      
+    </div>
+
+<div id="id03" class="modal3">
+<form  class="modal-content3" name="registration">
+
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+         
+            <div class="short">
+                          <ul class="inline_ul">
+                          <li> <label> Name: </label></li>
+                          <li> <label id="fname"></label></li>
+                          <li> <label id="lname"></label></li>
+                          </ul>
+                        
+                          
+                          <ul class="inline_ul">
+                          <li> <label>Mobile no.:</label></li>
+                          <li> <label  id="mob"></label> </li>
+                          </ul>
+            </div>
+                          <ul class="inline_ul">          
+                           <li> <label >Email: </label></li>
+                           <li> <label id="mail"></label>  </li>
+                          </ul>
+        
+
+          <div class="short">
+                      
+                  
+                      <ul class="inline_ul">      
+                      <ul class="dob">
+                           <li><label for="dob" >DOB: </label></li>
+                          <li class="dd"><label id="dob_dd"></label></li>
+                          <li class="mm"><label id="dob_mm"></label></li>
+                          <li class="yyyy"><label id="dob_yyyy"></label> </li>  
+                  </ul>
+                </ul>
+                     
+               
+                     <ul class="inline_ul">     
+                      <li><label for="city" >City: </label></li>
+                      <li><label id="city"></label> </li>
+                    </ul>
+                    <ul class="inline_ul">
+                      <li><label for="zip" >Zip code: </label></li>
+                      <li><label id="zip"></label> </li>
+                    </ul>
+          </div>
+          
+                    <ul class="inline_ul">
+                       <li><label for="bio">Address: </label></li>
+                       <li><label id="bio"></label></li>
+                    </ul>
+
+  
+</fieldset>
+<fieldset>
+          
+          <legend><span class="number">2</span>Your profile</legend>
+          <ul class="inline_ul">
+              <li><label>Profession:</label></li>
+              <li><label id="Profession"></label> </li>
+          </ul>
+       
+          <ul class="inline_ul">
+              <li><label for="job">Want to work :</label></li>
+              <li><label id="job"></label></li>
+          </ul>
+      
+          
+        </fieldset>
+        
+  
+</form>
+</div>
+
+
+
+</body>
+</html>

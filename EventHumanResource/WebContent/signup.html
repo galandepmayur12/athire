@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign_up</title>
+    <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/signup.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+     @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+     body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+                     .modal3 {
+                 
+                   background-color: rgba(0,0,0,0); /* Black w/ opacity */
+                    margin-top: 8em;
+                }
+                .modal-content3 {
+                    background-color: #fefefe;
+                    width: 60%; /* Could be more or less, depending on screen size */
+                    padding-left: 20%;
+                }
+                .animate3 {
+                    -webkit-animation: animatezoom 0.6s;
+                    animation: animatezoom 0.6s
+                }
+                @-webkit-keyframes animatezoom {
+                    from {-webkit-transform: scale(0)} 
+                    to {-webkit-transform: scale(1)}
+                }
+                    
+                @keyframes animatezoom {
+                    from {transform: scale(0)} 
+                    to {transform: scale(1)}
+                }
+
+                .modal3 input[type="text"],input[type="password"],
+                input[type="date"],
+                input[type="datetime"],
+                input[type="email"],
+                input[type="number"],
+                input[type="tel"],
+                input[type="time"],
+                textarea,
+                select {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 70%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 30px;
+                }
+
+                .short input[type="text"],input[type="password"] {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 30%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 20px;
+                }
+                .modal3 input[type="radio"],
+                input[type="checkbox"] {
+                  margin: 0 0 8px 0;
+                  float: right;
+                }
+                .modal3 img {
+                  height: 800px;
+                  width: 800px;
+                }
+                .modal3 select {
+                  padding: 6px;
+                  height: 32px;
+                  border-radius: 2px;
+                }
+                .modal3 fieldset {
+                  margin-bottom: 30px;
+                  border: 5px solid #3ac162;
+                  margin: 2em 3em 2em 3em;
+
+                }
+                .modal3 legend {
+                  font-size: 1.5em;
+                  margin-bottom: 10px;
+                }
+                .modal3 label {
+                  display: block;
+                  margin-bottom: 8px;
+                  font-size: 1.5em;
+                  text-align: left;
+                }
+                .modal3 label.light {
+                  font-weight: 300;
+                  display: inline;
+                }
+                .number {
+                  background-color: #5fcf80;
+                  color: #fff;
+                  height: 30px;
+                  width: 30px;
+                  display: inline-block;
+                  font-size: 0.8em;
+                  margin-right: 4px;
+                  line-height: 30px;
+                  text-align: center;
+                  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+                  border-radius: 100%;
+                }
+                .short {
+                    
+                }
+                .short label {
+                    
+                }
+                .modal3 button {
+                  padding: 19px 39px 18px 39px;
+                  color: #FFF;
+                  background-color: #206010;
+                  font-size: 18px;
+                  text-align: center;
+                  font-style: normal;
+                  border-radius: 5px;
+                  width: 30%;
+                  border: 1px solid #206010;
+                  border-width: 1px 1px 3px;
+                  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+                  margin-bottom: 10px;
+                  margin-left: 35%;
+                  cursor: pointer;
+
+                }
+                ul {
+                    list-style-type:none;
+                    margin:0;
+                    padding-left:0;
+                    /*float: right;
+                    /*position: absolute;
+                   /*width: 100%;*/
+                }
+
+                /*Create a horizontal list with spacing*/
+                li.hire {
+                    display:inline-block;
+                    margin-left: 4em;
+                    margin-right: 4em;
+
+                }
+               li.dd {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -17%;
+               }
+                  li.mm {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -17%;
+               }
+
+               li.yyyy {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: 2px;
+               }
+
+
+
+
+
+                /* ##############3 header bar  ###############################3*/
+
+
+
+                /*Strip the ul of padding and list styling*/
+
+                header {
+                    box-sizing: border-box;
+                    background: #fff;
+                    color: #555f66;
+                    height: 5em;
+                    left: 0;
+                    line-height: 5em;
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    box-shadow: 0 0 4em 0 rgba(0,0,0,.8);
+                    z-index:99999;
+                }
+
+                header h1 {
+                    color: #666f77;
+                    font-weight: 700;
+                    left: 2.25em;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                    text-decoration: none;
+                }
+                header nav {
+                    position: absolute;
+                    right: 3.25em;
+                    top: 0;
+                    vertical-align: middle;
+                    
+                }
+
+
+                ul.menu {
+                    list-style-type:none;
+                    margin:0;
+                    padding-left:0;
+                    float: right;
+                    /*position: absolute;
+                   /*width: 100%;*/
+                }
+
+                /*Create a horizontal list with spacing*/
+                li.menu1 {
+                    display:inline-block;
+                    margin-left: 1em;
+                   /*float: right;
+                    margin-right: 1px;
+                   /* width: 100%;
+                */
+                }
+                /*Style for menu links*/
+                li.menu1 a {
+                    display: block;
+                    min-width: 140px;
+                   /* height: 50px;*/
+                    text-align: center;
+                    line-height: 50px;
+                    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    color: #fff;
+                    text-decoration: none;
+                    background-color: #206010;
+                    border-radius: 5px;
+                    /*border: 0;
+                    cursor: pointer;
+                    font-weight: 300;*/
+                    text-transform: uppercase;
+                    letter-spacing: 0.125em;
+                    font-size: 0.9em;
+                  /*  padding: 0 1.75em;
+                    white-space: nowrap;*/
+                    text-indent: 0.25em;
+
+                }
+                /*Hover state for top level links*/
+                li.menu1:hover a {
+                    background: #19c589;
+                }
+
+
+                header h1 {
+                    color: #666f77;
+                    font-weight: 700;
+                    left: 5.25em;
+                    height: inherit;
+                    line-height: inherit;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                }
+                h1,h2 {
+                    color: #fff;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 0.125em;
+                }
+				
+				.valid{
+					/* display:inline-block; */
+					color: red;
+				}
+
+                /*##############################################3*/
+
+
+
+
+    </style>
+</head>
+
+
+
+<body>
+
+
+
+      <header>
+          <!--<label for="show-menu" class="show-menu">Show Menu</label>-->
+         <!--<input type="checkbox" id="show-menu" role="button">-->
+          <h1 class="logo"><a href="#">HRS</a></h1>
+          <nav>
+              <ul class="menu">
+              <li class="menu1"><a href="index.html" class="b">Home</a></li>
+              <li class="menu1"><a href="login.html" class="b">Login</a></li>
+              <li class="menu1"><a href="signup.html" class="b">Sign up</a></li>
+              </ul>
+          </nav>
+      </header>
+
+
+
+
+
+
+
+
+<div id="id03" class="modal3">
+<form  class="modal-content3 animate3" name="registration">
+
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+         
+            <div class="short">
+                      
+                      <label>First Name:</label>
+                      <input type="text" id="fname" name="user_fname" >
+                      <div id="fname1"></div><!--validation-->
+                      
+                      <label >Last Name:</label>
+                      <input type="text" id="lname" name="user_lname">
+                      <div id="lname1"></div><!--validation-->
+                      
+                      <label>Mobile no.:</label>
+                      <input type="text" id="mob" name="user_mob" onblur = 'validate( "mob1", this.value,"mob")'>
+						<div class="valid" id="mob1"></div><!--validation-->
+            
+            </div>
+
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email" onblur = 'validate( "mail1", this.value,"email_id")'>
+          <div class="valid" id="mail1"></div><!--validation-->
+
+
+          <div class="short">
+                      
+                  
+                      <label for="dob" >DOB: </label>
+                      <ul class="dob">
+                          <li class="dd"><input type="text" id="dob_dd" name="dob_dd" placeholder="DD" onblur = 'validate("dd1", this.value, "dd")'></li>
+                          <!-- <div class="valid" id="dd1"></div>validation -->
+                          <li class="mm"><input type="text" id="dob_mm" name="dob_mm" placeholder="MM" onblur = 'validate("mm1", this.value, "mm")'></li>
+                          <!-- <div class="valid" id="mm1"></div>validation -->
+                          <li class="yyyy"><input type="text" id="dob_yyyy" name="dob_yyyy" placeholder="YYYY" onblur = 'validate("yyyy1", this.value,"yyyy")'></li>
+                 		  <div class="valid" id="dd1"></div><!--validation-->
+                 		  <div class="valid" id="mm1"></div><!--validation-->
+                 		  <div class="valid" id="yyyy1"></div><!--validation-->
+                  </ul>
+                     
+                      <label for="city" >City: </label>
+                      <input type="text" id="city" name="city">
+                      <div id="city1"></div><!--validation-->
+                      <label for="zip" >Zip code: </label>
+                      <input type="text" id="zip" name="zip" onblur = 'validate("zip1", this.value,"zipcode")'>
+          				<div class="valid" id="zip1"></div>
+          </div>
+          
+          
+         <label for="bio">Address:</label>
+          <textarea id="bio" name="user_add"></textarea>
+          <div id="add1"></div><!--validation-->
+  
+
+            <ul>
+                <li class="hire"><input type="radio" name="transType" value="public" onclick="checkTransType(this.value)"> 
+<label>Want to hire</label></li>
+                <li class="hire"><input type="radio" name="transType" value="drive" onclick="checkTransType(this.value)"> 
+<label>Get hired</label> </li>
+            </ul>
+</fieldset>
+
+<!--Emplyoee-->
+
+      <div id="driveDiv" style="display:none;">
+        <fieldset>
+          
+          <legend><span class="number">2</span>Your profile</legend>
+          
+          <label>Profession:</label><br>
+   
+          <div style="height: 6em; width: 30em; overflow: auto;">
+              <input type="checkbox" id="Profession" value="Photographer" name="user_interest">
+              <label class="light" for="development">Photographer</label><br>
+              
+              <input type="checkbox" id="Profession" value="Choreographer" name="user_interest">
+              <label class="light" for="design">Choreographer</label><br>
+                
+              <input type="checkbox" id="Profession" value="Anchor" name="user_interest">
+              <label class="light" for="business">Anchor</label><br>
+             
+              <input type="checkbox" id="Profession" value="Designer" name="user_interest"> 
+              <label class="light" for="business">Designer</label><br>
+
+              <input type="checkbox" id="Profession" value="Volunteer" name="user_interest"> 
+              <label class="light" for="business">Volunteer</label><br>
+
+              <input type="checkbox" id="Profession" value="Promoter" name="user_interest"> 
+              <label class="light" for="business">Promoter</label><br>
+              
+              <input type="checkbox" id="Profession" value="Caterers" name="user_interest"> 
+              <label class="light" for="business">Caterers</label><br>
+              
+              <input type="checkbox" id="Profession" value="Event_Organizer" name="user_interest"> 
+              <label class="light" for="business">Event Organizer</label><br>
+              
+              <input type="checkbox" id="Profession" value="Sound_System" name="user_interest"> 
+              <label class="light" for="business">Sound System</label><br>
+              
+              <input type="checkbox" id="Profession" value="Singer" name="user_interest"> 
+              <label class="light" for="business">Singer</label><br>
+          </div>
+          
+        <br><br>
+          <label for="job">Want to work :</label>
+        <select id="job" name="user_job">
+            <option value="Individual">Individually</option>
+            <option value="team">In team</option>
+            <option value="both">Individually and In team</option>
+        </select>
+          <div class="short">
+            <label for="password">Password</label>
+            <input type="password" name="employee_pass" id="employee_pass" onblur = 'validate("pass11", this.value,"password")'>
+            <div class="valid" id="pass11"></div><!--validation-->
+          </div>
+
+        </fieldset>
+        <button type="submit" name="submit" value="submit" id="employee" class="submit" >SIGN UP</button>
+  </div>
+      
+
+<!--Emplyoer-->
+
+
+         <!-- <label for="bio">Address:</label>
+          <textarea id="bio" name="user_add"></textarea>-->
+        
+            <div id="publicDiv" style="display:none;">
+                <fieldset>
+                      
+                        <legend><span class="number">2</span>Your profile</legend>
+                        <label>Company name:</label><br>
+                        <input type="text" id="Company" name="user_company">
+                        <div id="company1"></div><!--validation-->
+                            <div class="short">
+            <label for="password">Password</label>
+            <input type="password" name="employer_pass" id="employer_pass" onblur = 'validate("pass12", this.value,"password")'>
+            <div class="valid" id="pass12"></div><!--validation-->
+          </div>
+                </fieldset>
+                <button type="submit" id="employer" name="submit" value="submit" class="submit" >SIGN UP</button>
+          </div>
+      </form>
+      </div>
+<script type="text/javascript">
+  
+  function checkTransType(selectedType){
+  if (selectedType == 'drive'){
+    document.getElementById('driveDiv').style.display = 'block';
+    document.getElementById('publicDiv').style.display = 'none';
+  } else{
+    document.getElementById('driveDiv').style.display = 'none';
+    document.getElementById('publicDiv').style.display = 'block';
+  }
+}
+</script>
+    </body>
+    </html>

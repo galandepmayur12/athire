@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign_up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="content-type" content="application/json" />
+	<script src="jquery.js"></script>
+   <script src="update.js"></script>
+    <style type="text/css">
+     
+                     .modal3 {
+                 
+                   background-color: rgba(0,0,0,0); /* Black w/ opacity */
+                    
+                }
+                .modal-content3 {
+                    background-color: #fefefe;
+                    width: 60%; /* Could be more or less, depending on screen size */
+                    padding-left: 20%;
+                }
+                .animate3 {
+                    -webkit-animation: animatezoom 0.6s;
+                    animation: animatezoom 0.6s
+                }
+                @-webkit-keyframes animatezoom {
+                    from {-webkit-transform: scale(0)} 
+                    to {-webkit-transform: scale(1)}
+                }
+                    
+                @keyframes animatezoom {
+                    from {transform: scale(0)} 
+                    to {transform: scale(1)}
+                }
+
+                .modal3 input[type="text"],input[type="password"],
+                input[type="date"],
+                input[type="datetime"],
+                input[type="email"],
+                input[type="number"],
+                input[type="tel"],
+                input[type="time"],
+                textarea,
+                select {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 70%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 30px;
+                }
+
+                .short input[type="text"] {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 30%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 20px;
+                }
+                .modal3 input[type="radio"],
+                input[type="checkbox"] {
+                  margin: 0 0 8px 0;
+                  float: right;
+                }
+                .modal3 img {
+                  height: 800px;
+                  width: 800px;
+                }
+                .modal3 select {
+                  padding: 6px;
+                  height: 32px;
+                  border-radius: 2px;
+                }
+                .modal3 fieldset {
+                  margin-bottom: 30px;
+                  border: 5px solid #3ac162;
+                  margin: 2em 3em 2em 3em;
+
+                }
+                .modal3 legend {
+                  font-size: 1.5em;
+                  margin-bottom: 10px;
+                }
+                .modal3 label {
+                  display: block;
+                  margin-bottom: 8px;
+                  font-size: 1.5em;
+                  text-align: left;
+                }
+                .modal3 label.light {
+                  font-weight: 300;
+                  display: inline;
+                }
+                .number {
+                  background-color: #5fcf80;
+                  color: #fff;
+                  height: 30px;
+                  width: 30px;
+                  display: inline-block;
+                  font-size: 0.8em;
+                  margin-right: 4px;
+                  line-height: 30px;
+                  text-align: center;
+                  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+                  border-radius: 100%;
+                }
+                .short {
+                    
+                }
+                .short label {
+                    
+                }
+                .modal3 button {
+                  padding: 19px 39px 18px 39px;
+                  color: #FFF;
+                  background-color: #206010;
+                  font-size: 18px;
+                  text-align: center;
+                  font-style: normal;
+                  border-radius: 5px;
+                  width: 50%;
+                  border: 1px solid #206010;
+                  border-width: 1px 1px 3px;
+                  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+                  margin-bottom: 10px;
+                  margin-left: 25%;
+
+                }
+                ul {
+                    list-style-type:none;
+                    margin:0;
+                    padding-left:0;
+                    /*float: right;
+                    /*position: absolute;
+                   /*width: 100%;*/
+                }
+
+                /*Create a horizontal list with spacing*/
+                li {
+                    display:inline-block;
+                    margin-left: 4em;
+                    margin-right: 4em;
+
+                }
+               li.dd {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -17%;
+               }
+                  li.mm {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -17%;
+               }
+
+   li.yyyy {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: 2px;
+               }
+
+    </style>
+</head>
+
+
+
+<body>
+<div id="id03" class="modal3">
+<form  class="modal-content3 animate3" name="registration">
+
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+         
+            <div class="short">
+                      
+                      <label>First Name:</label>
+                      <input type="text" id="fname" name="user_fname">
+                      <div id="fname1"></div><!--validation-->
+					  
+                      <label >Last Name:</label>
+                      <input type="text" id="lname" name="user_lname">
+                      <div id="lname1"></div><!--validation-->
+					  
+                      <label>Mobile no.:</label>
+                      <input type="text" id="mob" name="user_mob">
+					  <div id="mob1"></div><!--validation-->
+            
+            </div>
+
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email">
+			<div id="mail1"></div><!--validation-->
+          <div class="short">
+                      
+                  
+                      <label for="dob" >DOB: </label>
+                      <ul class="dob">
+                          <li class="dd"><input type="text" id="dob_dd" name="dob_dd" placeholder="DD"></li>
+						  <div id="dd1"></div><!--validation-->
+                          <li class="mm"><input type="text" id="dob_mm" name="dob_mm" placeholder="MM"></li>
+						  <div id="mm1"></div><!--validation-->
+                          <li class="yyyy"><input type="text" id="dob_yyyy" name="dob_yyyy" placeholder="YYYY"></li>
+						  <div id="yyyy1"></div><!--validation-->
+                  </ul>
+                     
+                      <label for="city" >City: </label>
+                      <input type="text" id="city" name="city">
+					  <div id="city1"></div><!--validation-->
+          </div>
+          
+          
+         <!-- <label for="bio">Address:</label>
+          <textarea id="bio" name="user_add"></textarea>-->
+  
+
+            <ul>
+                <li><input type="radio" name="transType" value="drive" onclick="checkTransType(this.value)"> 
+<label>Want to hire</label></li>
+                <li><input type="radio" name="transType" value="public" onclick="checkTransType(this.value)"> 
+<label>Get hired</label> </li>
+            </ul>
+</fieldset>
+
+<!--Emplyoee-->
+
+      <div id="driveDiv" style="display:none;">
+        <fieldset>
+          
+          <legend><span class="number">2</span>Your profile</legend>
+          
+          <label>Profession:</label><br>
+   
+          <div style="height: 6em; width: 30em; overflow: auto;">
+              <input type="checkbox" id="Profession" value="Photographer" name="user_interest">
+              <label class="light" for="development">Photographer</label><br>
+              
+              <input type="checkbox" id="Profession" value="Choreographer" name="user_interest">
+              <label class="light" for="design">Choreographer</label><br>
+                
+              <input type="checkbox" id="Profession" value="Anchor" name="user_interest">
+              <label class="light" for="business">Anchor</label><br><br>
+             
+              <input type="checkbox" id="Profession" value="Designer" name="user_interest"> 
+              <label class="light" for="business">Designer</label><br>
+
+              <input type="checkbox" id="Profession" value="Volunteer" name="user_interest"> 
+              <label class="light" for="business">Volunteer</label><br>
+
+              <input type="checkbox" id="Profession" value="Promoter" name="user_interest"> 
+              <label class="light" for="business">Promoter</label><br>
+          </div>
+		  <!--validation-->
+			<div id="checkbox"></div>
+          <label for="job">Want to work :</label>
+        <select id="job" name="user_job">
+            <option value="Individual">Individually</option>
+            <option value="team">In team</option>
+            <option value="both">Individually and in team</option>
+        </select>
+   
+        </fieldset>
+        <button type="submit" name="submit"  class="submit" value="submit">Sign up</button>
+		 <button type="submit" name="submit"  id="update" class="update" value="submit">Update</button>
+  </div>
+      
+
+<!--Emplyoer-->
+
+
+         <!-- <label for="bio">Address:</label>
+          <textarea id="bio" name="user_add"></textarea>-->
+        
+            <div id="publicDiv" style="display:none;">
+                <fieldset>
+                      
+                        <legend><span class="number">2</span>Your profile</legend>
+                        <label>Company name:</label><br>
+                        <input type="text" id="Company" name="user_company">
+               
+                </fieldset>
+                <button type="submit" name="submit" class="submit" value="submit">Sign up</button>
+          </div>
+      </form>
+      </div>
+<script type="text/javascript">
+  
+  function checkTransType(selectedType){
+  if (selectedType == 'drive'){
+    document.getElementById('driveDiv').style.display = 'block';
+    document.getElementById('publicDiv').style.display = 'none';
+  } else{
+    document.getElementById('driveDiv').style.display = 'none';
+    document.getElementById('publicDiv').style.display = 'block';
+  }
+}
+</script>
+    </body>
+    </html>

@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employer_prof_update</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src ='Scripts/jquery.js'></script>
+    <script src ='Scripts/client_update.js'></script>
+    <style type="text/css">
+    	     @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+     body {
+    
+    font-family: 'Raleway', sans-serif;
+}
+    	header {
+    box-sizing: border-box;
+    background: #fff;
+    color: #555f66;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 4em 0 rgba(0,0,0,.8);
+    z-index:99999;
+	}
+	header h1 {
+    color: #666f77;
+    font-weight: 700;
+    left: 2.25em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+}
+
+header nav {
+    position: absolute;
+    right: 3.25em;
+    top: 0;
+    vertical-align: middle;
+    
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding-left:0;
+    float: right;
+    /*position: absolute;
+   /*width: 100%;*/
+}
+
+/*Create a horizontal list with spacing*/
+li {
+    display:block;
+    margin-left: 1em;
+   /*float: right;
+    margin-right: 1px;
+   /* width: 100%;
+*/
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    /*background: #2f3036;*/
+    text-decoration: none;
+    width: 100
+}
+li.user_name {
+    font-size: xx-large;
+}
+
+.button {
+    
+    
+    background-color: #206010;
+    border-radius: 5px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    font-size: 0.9em;
+    height: 2.85em;
+    line-height: 2.85em;
+    padding: 0 1.75em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    text-indent: 0.25em;
+
+}
+
+/*.dropdown {
+    float: left;
+    overflow: hidden;
+}
+*/
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: green;
+}
+div {
+	display: block;
+}
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(32, 96, 16, 0.72);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 3px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(22, 220, 22);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.imgcontainer {
+    text-align: center;
+   margin: 15em 0 0 0;
+   /* position: relative;*/
+   float: left;
+}
+
+img.avatar {
+    width: 50%;
+    border-radius: 50%;
+}
+
+
+.modal3 {
+                 
+                   background-color: rgba(0,0,0,0); /* Black w/ opacity */
+                    
+                }
+                .modal-content3 {
+                    background-color: #fefefe;
+                    width: 60%; /* Could be more or less, depending on screen size */
+                    padding-left: 40%;
+                    padding-top: 5em;
+                }
+           
+
+                .modal3 input[type="text"],input[type="password"],
+                input[type="date"],
+                input[type="datetime"],
+                input[type="email"],
+                input[type="number"],
+                input[type="tel"],
+                input[type="time"],
+                textarea,
+                select {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 70%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 30px;
+                }
+
+                .short input[type="text"],input[type="password"] {
+                  background: rgba(255,255,255,0.1);
+                  border: none;
+                  font-size: 16px;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  outline: 0;
+                  padding: 15px;
+                  width: 30%;
+                  background-color: #e8eeef;
+                  color: #8a97a0;
+                  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                  margin-bottom: 20px;
+                }
+                .modal3 input[type="radio"],
+                input[type="checkbox"] {
+                  margin: 0 0 8px 0;
+                  float: right;
+                }
+                .modal3 img {
+                  height: 800px;
+                  width: 800px;
+                }
+                .modal3 select {
+                  padding: 6px;
+                  height: 32px;
+                  border-radius: 2px;
+                }
+                .modal3 fieldset {
+                  margin-bottom: 30px;
+                  border: 5px solid #3ac162;
+                  margin: 2em 3em 2em 3em;
+
+                }
+                .modal3 legend {
+                  font-size: 1.5em;
+                  margin-bottom: 10px;
+                }
+                .modal3 label {
+                  display: block;
+                  margin-bottom: 8px;
+                  font-size: 1.5em;
+                  text-align: left;
+                }
+                .modal3 label.light {
+                  font-weight: 300;
+                  display: inline;
+                }
+                .number {
+                  background-color: #5fcf80;
+                  color: #fff;
+                  height: 30px;
+                  width: 30px;
+                  display: inline-block;
+                  font-size: 0.8em;
+                  margin-right: 4px;
+                  line-height: 30px;
+                  text-align: center;
+                  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+                  border-radius: 100%;
+                }
+                .short {
+                    
+                }
+                .short label {
+                    
+                }
+                .modal3 button {
+                  padding: 19px 39px 18px 39px;
+                  color: #FFF;
+                  background-color: #206010;
+                  font-size: 18px;
+                  text-align: center;
+                  font-style: normal;
+                  border-radius: 5px;
+                  width: 50%;
+                  border: 1px solid #206010;
+                  border-width: 1px 1px 3px;
+                  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+                  margin-bottom: 10px;
+                  margin-left: 25%;
+
+                }
+                ul.dob {
+                    list-style-type:none;
+                    margin:0;
+                    padding-left:0;
+                    /*float: right;
+                    /*position: absolute;
+                   /*width: 100%;*/
+                }
+
+                /*Create a horizontal list with spacing*/
+              /*  li {
+                    display:inline-block;
+                    margin-left: 4em;
+                    margin-right: 4em;
+
+                }*/
+               li.dd {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -17%;
+               }
+                  li.mm {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -17%;
+               }
+
+   li.yyyy {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: 2px;
+               }
+
+
+	.valid{
+		color : red;
+	}
+
+
+*##############################################################################*/
+/*##############################################################################*/
+
+ul.actions {
+    display:inline-block;
+    cursor: default;
+    list-style: none;
+    margin-left: 5em;
+    margin-right: 26%;
+
+
+}
+ul.actions li {
+    display: inline-block;
+    padding: 0 1em 0 0;
+    vertical-align: middle;
+
+
+
+}
+ul.actions1 {
+    display:inline-block;
+    cursor: default;
+    list-style: none;
+    padding-right: 1%;
+    box-sizing: border-box;
+
+}
+ul.actions1 li {
+    display: inline-block;
+    padding: 0 1em 0 0;
+    vertical-align: middle;
+
+
+}
+.unstyled-list {
+    margin: 0;
+    
+    list-style-type: none;
+}
+.button.button-hire {
+    min-width: 14.5em;
+    background-color: #629D01;
+    font-size: 1rem;
+    box-shadow: 0 0 4em 0 rgba(50,50,50,.5);
+
+}
+
+.button-hire:hover {
+    background: #00ff6c;
+    color: #232323;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-top: 1em;
+}
+.para {
+    font-weight: 300;
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 3em;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+.imgcontainer1 {
+    text-align: center;
+    margin: 2px 0 2px 0;
+    position: relative;
+}
+.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    text-align: center;
+
+}
+/** {
+    box-sizing: border-box;
+}*/
+
+.modal-content1 {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 660px; /* Could be more or less, depending on screen size */
+
+}
+
+.animate1 {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.outer {
+  width: 1px;
+  height: 140%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.inner {
+  position: absolute;
+  width:100%;
+  height: 60%;
+  background: grey;
+  top: 30%;
+  box-shadow: 0px 0px 30px 20px grey;
+}
+.para1 {
+    font-weight: 300;
+    color: black;
+    font-size: 1.3em;
+    margin-bottom: 3em;
+}
+
+.ulist {
+    margin: 0;
+    float: none;
+    list-style-type: none;
+    display: inline-flex;
+}
+ul.ulist li{
+    /*padding: 2em;
+    /*padding-bottom: 5em;*/
+}
+li.list1 {
+
+}
+li.list2 {
+    margin-left: 8.5%;
+}
+
+li.list3 {
+
+}
+
+/*##############################################################################*/
+/*##############################################################################*/
+
+
+    </style>
+</head>
+<body>
+
+
+<header>
+    <h1 class="logo"><a href="#">HRS</a></h1>
+    <nav>
+        <ul id="menu">
+        <li>
+          <div class="dropdown">
+          	<div class="chip">
+  					<img src="images/avatar.png" alt="Person" width="30" height="30" class="dropbtn">
+  				<div class="chip" id="prof_name"></div>
+						</div>
+			   <!-- <button class="dropbtn">Dropdown</button>-->
+			    <div class="dropdown-content">
+			      
+			      <a href="Employer_profile.html" class="button special">My profile</a>
+			    <!--  <a href="Employer_prof_update.html" class="button special">profile Update</a>-->
+            <a href="Employer_events.html" class="button special">My Events</a>
+            <a onclick="document.getElementById('id02').style.display='block'" class="button special">Want to hire?</a>
+			      <a href="#" class="button special" id="logout">logout</a>
+			    </div>
+  			</div> 
+        </li>
+    </ul>
+    </nav>
+</header>
+
+
+  <div class="imgcontainer">
+    <ul>
+        <li><img src="images/avatar.png" alt="Avatar" class="avatar"></li>
+       <li class="user_name" id="uname"></li>
+    </ul>
+                      
+    </div>
+    
+<!-- ########
+	 ######## -->
+	 
+
+
+<!-- ########
+	 ######## -->
+	 	     
+<div id="id02" class="modal1">
+
+<form class="modal-content1 animate1" action="/action_page.php">
+    <div class="imgcontainer1">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+  <div class="outer">
+  <div class="inner"></div>
+</div>
+        <div class="container1">
+    
+      <ul class="ulist">
+      <li class="list1"><p class="para1">wide range of pre defined packages to choose from</p></li>
+      <li class="list2"><div class="outer">
+  <div class="inner"></div>
+</div></li>
+      <li class="list3"><p class="para1">create your own custom package,single and multiple selection </p></li>
+      
+      </ul>
+    </div>
+        
+      <ul class="actions1">
+        <li><a href="packages.html" class="button button-hire">Packages</a></li>
+        <li><a href="custom.html" class="button button-hire">Custom</a></li>
+    </ul>
+
+
+    <div class="container" >
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+  </div>
+
+<div id="id03" class="modal3">
+<form  class="modal-content3" name="registration">
+
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+         
+            <div class="short">
+                      
+                      <label>First Name:</label>
+                      <input type="text" id="fname" name="user_fname">
+                      
+                      <label >Last Name:</label>
+                      <input type="text" id="lname" name="user_lname">
+                      
+                      <label>Mobile no.:</label>
+            			 <input type="text" id="mob" name="user_mob" onblur = 'validate( "mob1", this.value, "mob")'>
+						<div class="valid" id="mob1"></div><!--validation-->
+            </div>
+
+          <label for="mail">Email:</label>
+			<input type="email" id="mail" name="user_email" >
+          <div class="valid" id="mail1"></div><!--validation-->
+          <div class="short" >
+                      
+                  
+                      <label for="dob" >DOB: </label>
+                      <ul class="dob">
+                          <li class="dd"><input type="text" id="dob_dd" name="dob_dd" placeholder="DD" onblur = 'validate("dd1", this.value, "dd")'></li>
+                          <!-- <div class="valid" id="dd1"></div>validation -->
+                          <li class="mm"><input type="text" id="dob_mm" name="dob_mm" placeholder="MM" onblur = 'validate("mm1", this.value, "mm")'></li>
+                          <!-- <div class="valid" id="mm1"></div>validation -->
+                          <li class="yyyy"><input type="text" id="dob_yyyy" name="dob_yyyy" placeholder="YYYY" onblur = 'validate("yyyy1", this.value,"yyyy")'></li>
+                 		  <div class="valid" id="dd1"></div><!--validation-->
+                 		  <div class="valid" id="mm1"></div><!--validation-->
+                 		  <div class="valid" id="yyyy1"></div><!--validation-->
+                  </ul>
+                     <br>
+                      <label for="city" >City: </label>
+                      <input type="text" id="city" name="city">
+                      <label for="zip" >Zip code: </label>
+                      <input type="text" id="zip" name="zip" onblur = 'validate("zip1", this.value,"zipcode")'>
+          				<div class="valid" id="zip1"></div>
+          </div>
+          
+          
+         <label for="bio">Address:</label>
+          <textarea id="bio" name="user_add"></textarea>
+
+  
+</fieldset>
+<fieldset>
+          
+          <legend><span class="number">2</span>Your profile</legend>
+          
+   
+          <label>Company name:</label><br>
+                        <input type="text" id="Company" name="user_company">
+        
+         
+            <div class="short">
+            	<button name="employee_pass" formaction="changePass.html" id="employee_pass">Change Password</button>
+ <!--            <label for="password">Password</label>
+            <input type="password" name="employee_pass" id="employer_pass" onblur = 'validate("pass11", this.value,"password")'>
+            <div class="valid" id="pass11"></div> --> 
+          </div>
+        </fieldset>
+        <button type="submit" name="submit" value="submit" class="submit">Update</button>
+  
+</form>
+</div>
+
+<!-- ##########
+##########-->
+
+
+<script>
+  var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+</body>
+</html>

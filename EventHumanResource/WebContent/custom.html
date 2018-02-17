@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>custom_package</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Scripts/jquery.js"></script>
+	 <script src="Scripts/custom.js"></script>
+    <style type="text/css">
+
+          @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+    body{
+      font-family: 'Raleway', sans-serif;
+   
+    }
+* {
+    box-sizing: border-box;
+}
+
+.columns {
+    float: left;
+    width: 25%;
+    padding: 7px;
+}
+
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+    background-color:#111 ;
+    color: white;
+    font-size: 25px;
+}
+
+.price li {
+    border-bottom: 2px solid #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+    .columns {
+        width: 100%;
+    }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+ 
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+.modal3 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+.modal-content3 {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+.animate3 {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.modal-content3 form {
+  
+  /*max-width: 800%;*/
+  width: 60%;
+ margin: 50px 300px 50px 300px;
+  padding: 50px 50px 50px 50px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+.modal3 h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 4px;
+}
+.modal3 input[type="text"],input[type="date"],
+input[type="datetime"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  outline: 0;
+  padding: 15px;
+  width: 70%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+.dob input[type="text"]
+{
+  width: 35%;
+}
+/*input[type="text"] {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0 0 0 -70%;
+  outline: 0;
+  padding: 15px;
+  width: 30%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 20px;
+}
+*/
+.modal3 select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+.modal3 fieldset {
+  margin-bottom: 30px;
+  border: 5px solid #3ac162;
+  margin: 20px 25px 20px 25px;
+
+}
+.modal3 legend {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+.modal3 label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+
+.modal3 button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #206010;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 40%;
+  border: 1px solid #206010;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-left: 30%;
+
+}
+li.dd {
+                display:inline-block;
+                    margin-left: -40px;
+                    margin-right: -140px;
+               }
+                  li.mm {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -140px;
+               }
+
+   li.yyyy {
+                display:inline-block;
+                    margin-left: 2px;
+                    
+               }
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.imgcontainer1 {
+    text-align: center;
+    margin: 2px 0 2px 0;
+    position: relative;
+}
+
+.whole {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 8em;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/*Strip the ul of padding and list styling*/
+
+header {
+    box-sizing: border-box;
+    background: #fff;
+    color: #555f66;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 4em 0 rgba(0,0,0,.8);
+    z-index:99999;
+}
+
+header h1 {
+    color: #666f77;
+    font-weight: 700;
+    left: 2.25em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+}
+header nav {
+    position: absolute;
+    right: 3.25em;
+    top: 0;
+    vertical-align: middle;
+    
+}
+
+
+ul.menu {
+    list-style-type:none;
+    margin:0;
+    padding-left:0;
+    float: right;
+    /*position: absolute;
+   /*width: 100%;*/
+}
+
+/*Create a horizontal list with spacing*/
+li.menu1 {
+    display:inline-block;
+    margin-left: 1em;
+   /*float: right;
+    margin-right: 1px;
+   /* width: 100%;
+*/
+}
+/*Style for menu links*/
+li.menu1 a {
+    display: block;
+    min-width: 140px;
+   /* height: 50px;*/
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    background-color: #206010;
+    border-radius: 5px;
+    /*border: 0;
+    cursor: pointer;
+    font-weight: 300;*/
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    font-size: 0.9em;
+  /*  padding: 0 1.75em;
+    white-space: nowrap;*/
+    text-indent: 0.25em;
+
+}
+/*Hover state for top level links*/
+li.menu1:hover a {
+    background: #19c589;
+}
+
+
+header h1 {
+    color: #666f77;
+    font-weight: 700;
+    left: 5.25em;
+    height: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
+h1,h2 {
+    color: #000;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: x-large;
+
+}
+
+#bt{
+	width:300px;
+  margin-left: 37%;
+	margin-top:20px;
+	margin-bottom:50px;
+}
+
+.qty{
+	text-align:center;
+	height:35px;
+	width:70px;
+	background-color:#dddddd;
+	border: 0px;
+}
+
+.nonl{
+	display : inline-block
+}
+
+
+.valid{
+		color : red;
+	}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<header>
+    <!--<label for="show-menu" class="show-menu">Show Menu</label>-->
+   <!--<input type="checkbox" id="show-menu" role="button">-->
+    <h1 class="logo"><a href="#">CUSTOM PACKAGE</a></h1>
+    <nav>
+        <ul class="menu">
+        <li class="menu1"><a href="Employer_profile.html" class="b">HOME</a></li>
+       
+        </ul>
+    </nav>
+</header>
+
+<div class="whole">
+
+<div class="columns">
+      <div class="card">
+
+        <img src="images/photographer.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+        <h1>Photographer</h1>
+        <ul class="price">
+        <div style="margin: 10px;margin-top: 1px;">
+          <li class="grey">&#8377; 3500</li>
+		  <li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Photographer" id="1" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" type=text ></li>
+          
+       </div>
+       </ul>
+
+      </div>
+</div>
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/anchor.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+  <h1>Anchor</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;">
+    <li class="grey">&#8377; 2000</li>
+	<li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Anchor" value="0" onfocus="(this.value == '0') &amp;&amp; (this.value = '')" onblur="(this.value == '') &amp;&amp; (this.value = '0')" id=2 type="text"></li>
+    
+ </div>
+ </ul>
+
+</div>
+
+</div>
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/designer.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+  <h1>Designer</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;">
+    <li class="grey">&#8377; 7900</li>
+	<li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Designer" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=3 type=text ></li>
+    
+ </div>
+ </ul>
+
+</div>
+</div>
+
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/caterar.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+  <h1>Caterar</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;">
+    <li class="grey">&#8377; 10000</li>
+	<li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Caterar" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=4 type=text ></li>
+   
+ </div>
+ </ul>
+
+</div>
+</div>
+
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/sound.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+  <h1>Sound System</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;">
+    <li class="grey">&#8377; 3250</li>
+	<li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Sound System" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=5 type=text ></li>
+    
+ </div>
+ </ul>
+
+</div>
+</div>
+
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/promoting.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+  <h1>Promoter</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;">
+    <li class="grey">&#8377; 10000</li>
+	<li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Promoter" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=6 type=text ></li>
+   
+ </div>
+ </ul>
+
+</div>
+</div>
+
+
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/volunteer.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+  <h1>Volunteer</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;">
+    <li class="grey">&#8377; 500</li>
+	<li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Volunteer" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=7 type=text ></li>
+    
+ </div>
+ </ul>
+
+</div>
+</div>
+
+<div class="columns">
+      <div class="card">
+
+        <img src="images/singer.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+        <h1>Singer</h1>
+        <ul class="price">
+        <div style="margin: 10px;margin-top: 1px;">
+          <li class="grey">&#8377; 4500</li>
+		  <li><h4 class="nonl">Qty: &nbsp;</h4> <input class="qty" maxlength="1" name="Singer" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=8 type=text ></li>
+          
+       </div>
+       </ul>
+
+      </div>
+</div>
+<div class="columns">
+      <div class="card">
+
+        <img src="images/event organizer.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+        <h1>Event Organizer</h1>
+        <ul class="price">
+        <div style="margin: 10px;margin-top: 1px;">
+          <li class="grey">&#8377; 9000</li>
+		  <li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Event Organizer" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=9 type=text ></li>
+          
+       </div>
+       </ul>
+
+      </div>
+</div>
+<div class="columns">
+      <div class="card">
+
+        <img src="images/choreographer.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+        <h1>Choreographer</h1>
+        <ul class="price">
+        <div style="margin: 10px;margin-top: 1px;">
+          <li class="grey">&#8377; 5000</li>
+		  <li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Choreographer" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=10 type=text ></li>
+          
+       </div>
+       </ul>
+
+      </div>
+</div>
+<div class="columns">
+      <div class="card">
+
+        <img src="images/decorator.jpg" alt="John" style="width: 35%;padding-top: 15px;margin-bottom: -15px;">
+        <h1>Decorators</h1>
+        <ul class="price">
+        <div style="margin: 10px;margin-top: 1px;">
+          <li class="grey">&#8377; 2000</li>
+		  <li><h4 class="nonl">Qty: &nbsp;</h4><input class="qty" maxlength="1" name="Decorators" value="0" onfocus="(this.value == '0') && (this.value = '')" onblur="(this.value == '') && (this.value = '0')" id=11 type=text ></li>
+          
+       </div>
+       </ul>
+
+      </div>
+</div>
+<button onclick="document.getElementById('id01').style.display='block'"  id="bt" class="button" >Hire</button>
+</div>
+<!--id=id01 for photographer-->
+<div id="id01" class="modal3">
+
+     <form  id="photographer" class="modal-content3 animate3" name="registration">
+                   <div class="imgcontainer1">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  </div>
+                
+                  <fieldset>
+                    <legend></span>Event Details </legend>
+                    <div class="short">
+                    <label>Event Name:</label>
+                    <textarea id="event_name" name="event_name" placeholder="Give your event a name.."></textarea>
+                  <label for="dob" >Event date: </label>
+                                <ul class="dob">
+                                    <li class="dd"><input type="text" id="dob_dd" name="dob_dd" placeholder="DD"></li>
+                                    
+									<li class="mm"><input type="text" id="dob_mm" name="dob_mm" placeholder="MM"></li>
+                                    
+									<li class="yyyy"><input type="text" id="dob_yyyy" name="dob_yyyy" placeholder="YYYY"></li>
+									
+							</ul>
+                               <div class='valid' id='date'></div>
+                                <label for="city" >City: </label>
+                                <input type="text" id="city" name="city">
+                    </div>
+                    
+                   <label for="bio">Address:</label>
+                    <textarea id="bio" name="user_add"></textarea>
+                    <label>Event Description:</label>
+                    <textarea id="des" name="user_des" placeholder="What kind of event is it? e.g.Birthday"></textarea>
+                    
+                  </fieldset>
+
+                <button type="submit" name="submit" class="submit" value="Photographer">Register</button>
+          
+      </form>
+</div>
+
+<!--id=id02 for Anchor-->
+
+</div>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>packages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="Scripts/jquery.js"></script>
+   <script src="Scripts/packages1.js"></script>
+    <style type="text/css">
+* {
+    box-sizing: border-box;
+}
+
+.columns {
+    float: left;
+    width: 25%;
+    padding: 7px;
+}
+
+ul{
+	list-style-type: none;
+}
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+    background-color:#111 ;
+    color: white;
+    font-size: 25px;
+}
+
+.price li {
+    border-bottom: 2px solid #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+    .columns {
+        width: 100%;
+    }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+ 
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+.modal3 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+.modal-content3 {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+.animate3 {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.modal-content3 form {
+  
+  /*max-width: 800%;*/
+  width: 60%;
+ margin: 50px 300px 50px 300px;
+  padding: 50px 50px 50px 50px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+.modal3 h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 4px;
+}
+.modal3 input[type="text"],input[type="date"],
+input[type="datetime"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  outline: 0;
+  padding: 15px;
+  width: 70%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+.dob input[type="text"]
+{
+  width: 35%;
+}
+/*input[type="text"] {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0 0 0 -70%;
+  outline: 0;
+  padding: 15px;
+  width: 30%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 20px;
+}
+*/
+.modal3 select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+.modal3 fieldset {
+  margin-bottom: 30px;
+  border: 5px solid #3ac162;
+  margin: 20px 25px 20px 25px;
+
+}
+.modal3 legend {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+.modal3 label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+
+.modal3 button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #206010;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 40%;
+  border: 1px solid #206010;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-left: 30%;
+
+}
+li.dd {
+                display:inline-block;
+                    margin-left: -40px;
+                    margin-right: -140px;
+               }
+                  li.mm {
+                display:inline-block;
+                    margin-left: 2px;
+                    margin-right: -140px;
+               }
+
+   li.yyyy {
+                display:inline-block;
+                    margin-left: 2px;
+                    
+               }
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.imgcontainer1 {
+    text-align: center;
+    margin: 2px 0 2px 0;
+    position: relative;
+}
+
+
+.whole {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+p{
+	display:inline;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+<div class="whole">
+<div class="columns">
+      <div class="card">
+
+        <img src="images/birthday7.png" alt="John" style="width: 50%;padding-top: 15px;margin-bottom: -15px;">
+        <h1 id='0name'>Birthday</h1>
+        <ul class="price" >
+        <div style="margin: 10px;margin-top: 1px;" id="1st">
+          <li class="grey" id="0quote">&#8377; </li>
+		  <ul id="detail0">
+			
+		  </ul>
+          <li><button  value='0' class="button">Contact</button></li>
+       </div>
+       </ul>
+
+      </div>
+</div>
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/wedding_final.png" alt="John" style="width: 50%;padding-top: 15px;margin-bottom: -15px;">
+  <h1 id="1name">Wedding</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;" id="1st">
+    <li class="grey" id="1quote">&#8377; </li>
+		<ul id="detail1">
+        
+		</ul>
+    <li><button  value='1' class="button">Contact</button></li>
+ </div>
+ </ul>
+
+</div>
+</div>
+
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/college1.png" alt="John" style="width: 50%;padding-top: 15px;margin-bottom: -23px;">
+  <h1 id="2name">School/College events</h1>
+  <ul class="price" style="margin-top:-20px;">
+  <div style="margin: 10px;margin-top: 1px;" id="1st">
+    <li class="grey" id="2quote">&#8377; </li>
+		<ul id="detail2">
+          
+		 </ul>
+    <li><button class="button" value='2' >Contact</button></li>
+ </div>
+ </ul>
+
+</div>
+</div>
+
+<div class="columns">
+<div class="card">
+
+  <img src="images/wedding_final.png" alt="John" style="width: 50%;padding-top: 15px;margin-bottom: -15px;">
+  <h1 id="3name">Brand Promotion</h1>
+  <ul class="price">
+  <div style="margin: 10px;margin-top: 1px;">
+    <li class="grey" id="3quote">&#8377; </li>
+		<ul id="detail3">
+          
+		 </ul>
+    <li><button value='3' class="button" >Contact</button></li>
+ </div>
+ </ul>
+
+</div>
+</div>
+
+</div>
+
+
+
+<div id="id01" class="modal3">
+
+     <form  class="modal-content3 animate3" name="registration">
+                   <div class="imgcontainer1">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  </div>
+                
+                  <fieldset>
+                    <legend></span>Event Details </legend>
+                    <div class="short">
+                  <label for="dob" >Event date: </label>
+                                <ul class="dob">
+                                    <li class="dd"><input type="text" id="dob_dd" name="dob_dd" placeholder="DD"></li>
+                                    <li class="mm"><input type="text" id="dob_mm" name="dob_mm" placeholder="MM"></li>
+                                    <li class="yyyy"><input type="text" id="dob_yyyy" name="dob_yyyy" placeholder="YYYY"></li>
+                            </ul>
+                               
+                                <label for="city" >City: </label>
+                                <input type="text" id="city" name="city">
+                    </div>
+                    
+                   <label for="bio">Address:</label>
+                    <textarea id="bio" name="user_add"></textarea>
+                  </fieldset>
+              
+
+                <button type="submit" name="submit" class="submit" value="submit">Register</button>
+          
+      </form>
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

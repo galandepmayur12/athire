@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee_job_search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Scripts\jquery.js"></script>
+   <script src="Scripts\job_apply.js"></script>
+    <style type="text/css">
+    	    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+     body {
+    
+    font-family: 'Raleway', sans-serif;
+}
+    	header {
+    box-sizing: border-box;
+    background: #fff;
+    color: #555f66;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 4em 0 rgba(0,0,0,.8);
+    z-index:99999;
+	}
+	header h1 {
+    color: #666f77;
+    font-weight: 700;
+    left: 2.25em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+}
+
+header nav {
+    position: absolute;
+    right: 3.25em;
+    top: 0;
+    vertical-align: middle;
+    
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding-left:0;
+    float: right;
+    /*position: absolute;
+   /*width: 100%;*/
+}
+
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+    margin-left: 1em;
+   /*float: right;
+    margin-right: 1px;
+   /* width: 100%;
+*/
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    /*background: #2f3036;*/
+    text-decoration: none;
+    width: 100
+}
+
+.button {
+    
+    
+    background-color: #206010;
+    border-radius: 5px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    font-size: 0.9em;
+    height: 2.85em;
+    line-height: 2.85em;
+    padding: 0 1.75em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    text-indent: 0.25em;
+
+}
+
+/*.dropdown {
+    float: left;
+    overflow: hidden;
+}
+*/
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: green;
+}
+div {
+	display: block;
+}
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(32, 96, 16, 0.72);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 3px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(22, 220, 22);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+table, td, th {    
+    border: 3px solid #ddd;
+    text-align: center;
+   font-family: sans-serif;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 25px;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover{background-color:#f5f5f5}
+.tabl {
+    margin-top: 9em;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+<header>
+    <h1 class="logo"><a href="#">HRS</a></h1>
+    <nav>
+        <ul id="menu">
+        <li>
+          <div class="dropdown">
+          	<div class="chip">
+  					<img src="images/avatar.png" alt="Person" width="30" height="30" class="dropbtn">
+  					<div class="chip" id="prof_name"></div>
+						</div>
+			   <!-- <button class="dropbtn">Dropdown</button>-->
+			    <div class="dropdown-content">
+			     
+			      <a href="Employee_profile.html" class="button special">My profile</a>
+			      <a href="Employee_prof_update.html" class="button special">profile Update</a>
+<!--  			      <a href="Employee_job_search.html" class="button special">Job search</a>-->
+                  <a href="Employee_jobs.html" class="button special">My jobs</a>
+			      <a href="#" class="button special" id='logout'>logout</a>
+			    </div>
+  			</div> 
+        </li>
+    </ul>
+    </nav>
+</header>
+
+
+</head>
+<body>
+
+
+<div class="tabl">
+<h3 class="heading">Available Jobs</h3>
+<table class="job">
+  <tr >
+   <!--  <th class="id">ID</th> -->
+    <th class="job_title">Job Title</th>
+    <th class="disc">Description</th>
+    <th class="mode">Mode</th>
+    <th class="event_date">Event Date</th>
+    <th class="emp_name">Employer name</th>
+   <!--  <th class="contact">Contact</th> -->
+    <th class="add">Address</th>
+    <th class="pay">Payment &#8377;</th>
+    <th >Apply</th>
+  </tr>
+ 
+ <!-- 
+ <tr id="0">
+    No Jobs Found
+  </tr>
+ 
+  <tr id="1">
+    <td class="id">2</td>
+   <td class="domain">Photographer</td>
+   <td class="disc">Wedding</td>
+    <td class="mode">Team</td>
+    <td class="event_date">2/2/2017</td>
+    <td class="emp_name">xyz</td>
+    <td class="contact">1234567890</td>
+    <td class="add">kothrud,MIT COE,Pune</td>
+  <td class="pay">500</td>
+  <td><button class="button" id="1">Apply</button></td>
+  </tr>
+  
+   <tr id="2s">
+    <td class="id">3</td>
+    <td event_id="3rd" class="domain">Photographer</td>
+    <td event_id="3rd" class="disc">Birthday</td>
+    <td event_id="3rd" class="mode">Individual</td>
+    <td event_id="3rd" class="event_date">2/2/2017</td>
+    <td event_id="3rd" class="event_name">xyz</td>
+    <td event_id="3rd" class="contact">1234567890</td>
+    <td event_id="3rd" class="add">kothrud,MIT COE,Pune</td>
+    <td event_id="3rd" class="pay">500</td>
+    <td event_id="3rd" ><button class="button"  id="2">Apply</button></td>
+  </tr>
+  <tr id="3s">
+    <td class="id">4</td>
+   <td class="domain">Anchor</td>
+   <td class="disc">Birthday</td>
+    <td class="mode">Individual</td>
+    <td class="event_date">2/2/2017</td>
+    <td class="event_name">xyz</td>
+    <td class="contact">1234567890</td>
+    <td class="add">kothrud,MIT COE,Pune</td>
+    <td class="pay">500</td>
+    <td><button class="button" id="3">Apply</button></td>
+  </tr>-->
+</table>
+</div>
+
+
+
+
+</body>
+</html>

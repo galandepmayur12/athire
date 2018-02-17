@@ -1,0 +1,768 @@
+Assignment 1
+_________________________________________________
+1) Show following insert validation . Store all validation in a single Rule
+
+> db.createCollection("employee",{validator:{$and: [ {city:{$in:['pune','mumbai'
+,'delhi','chennai']}}, {salary:{$gt:1000}}, {grade:{$in:["A","B","C"]}}, {empid:
+{$exists:true}}, {name:{$type:"string"}} ] } })
+{ "ok" : 1 }
+> db.employee.insert({empid:1,name:"xyz1",city:"kanpur",salary:500,grade:"A",age:40});
+WriteResult({
+        "nInserted" : 0,
+        "writeError" : {
+                "code" : 121,
+                "errmsg" : "Document failed validation"
+        }
+})
+___________________________________________________
+2) Insert the documents in collection student(use batch insert (use bulk insert , insertmany) )
+
+> db.employee.insertMany([{empid:1,name:"abc",city:"pune",salary:5000,grade:"A",age:40},{empid:2,name:"def",city:"chennai",salary:12000,grade:"B",age:17},{empid:3,name:"egh",city:"mumbai",salary:25000,grade:"A",age:23},{empid:3,name:"jkl",city:"delhi",salary:10000,grade:"B",age:30},{empid:5,name:"xyz",city:"pune",salary:50000,grade:"A",age:32}]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("59dc3cdc4b4bb154b52e4b96"),
+                ObjectId("59dc3cdc4b4bb154b52e4b97"),
+                ObjectId("59dc3cdc4b4bb154b52e4b98"),
+                ObjectId("59dc3cdc4b4bb154b52e4b99"),
+                ObjectId("59dc3cdc4b4bb154b52e4b9a")
+        ]
+}
+
+____________________________________________________________________
+3)Write a MongoDB query to display the total no. of documents in the collection employee
+
+> db.employee.count()
+5
+___________________________________________________________________
+4)Update the document with the salary to 30000 whose grade Is A.
+> db.employee.updateMany({"grade":"A"},{$set:{"salary":30000}})
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 3 }
+> db.employee.find().pretty();
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b96"),
+        "empid" : 1,
+        "name" : "abc",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b97"),
+        "empid" : 2,
+        "name" : "def",
+        "city" : "chennai",
+        "salary" : 12000,
+        "grade" : "B",
+        "age" : 17
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b98"),
+        "empid" : 3,
+        "name" : "egh",
+        "city" : "mumbai",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b99"),
+        "empid" : 3,
+        "name" : "jkl",
+        "city" : "delhi",
+        "salary" : 10000,
+        "grade" : "B",
+        "age" : 30
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b9a"),
+        "empid" : 5,
+        "name" : "xyz",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 32
+}
+
+__________________________________________________________________
+5)Give rise in employee salary of rs. 5000 from other than Pune city
+
+> db.employee.updateMany({"city":{$ne:"pune"}},{$inc:{"salary":5000}})
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 3 }
+> db.employee.find().pretty()
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b96"),
+        "empid" : 1,
+        "name" : "abc",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b97"),
+        "empid" : 2,
+        "name" : "def",
+        "city" : "chennai",
+        "salary" : 17000,
+        "grade" : "B",
+        "age" : 17
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b98"),
+        "empid" : 3,
+        "name" : "egh",
+        "city" : "mumbai",
+        "salary" : 35000,
+        "grade" : "A",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b99"),
+        "empid" : 3,
+        "name" : "jkl",
+        "city" : "delhi",
+        "salary" : 15000,
+        "grade" : "B",
+        "age" : 30
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b9a"),
+        "empid" : 5,
+        "name" : "xyz",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 32
+}
+
+_________________________________________________________________
+6)Replace the document whose empid is 6.
+> db.employee.replaceOne({empid:6},{empid:6,name:"abc1",city:"delhi",salary:14000,grade:"C",age:30})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.employee.find().pretty();
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b96"),
+        "empid" : 1,
+        "name" : "abc",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b97"),
+        "empid" : 2,
+        "name" : "def",
+        "city" : "chennai",
+        "salary" : 17000,
+        "grade" : "B",
+        "age" : 17
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b98"),
+        "empid" : 3,
+        "name" : "egh",
+        "city" : "mumbai",
+        "salary" : 35000,
+        "grade" : "A",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b99"),
+        "empid" : 3,
+        "name" : "jkl",
+        "city" : "delhi",
+        "salary" : 15000,
+        "grade" : "B",
+        "age" : 30
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b9a"),
+        "empid" : 5,
+        "name" : "xyz",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 32
+}
+{
+        "_id" : ObjectId("59dc3e6a4b4bb154b52e4b9b"),
+        "empid" : 6,
+        "name" : "abc1",
+        "city" : "delhi",
+        "salary" : 14000,
+        "grade" : "C",
+        "age" : 30
+}
+
+________________________________________________________________________________
+7)Find the document with name Sunil and replace it with Anil (use findoneAndReplace)
+
+ db.employee.findOneAndReplace({name:"sunil"},{empid:7,name:"Anil",city:"delhi",age:30,salary:40000,grade:"A"})
+{
+        "_id" : ObjectId("59dd965d2966fae60026db4a"),
+        "empid" : 7,
+        "name" : "sunil",
+        "city" : "pune",
+        "salary" : 32000,
+        "grade" : "B"
+}
+> db.employee.find().pretty();
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b96"),
+        "empid" : 1,
+        "name" : "abc",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b97"),
+        "empid" : 2,
+        "name" : "def",
+        "city" : "chennai",
+        "salary" : 17000,
+        "grade" : "B",
+        "age" : 17
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b98"),
+        "empid" : 3,
+        "name" : "egh",
+        "city" : "mumbai",
+        "salary" : 35000,
+        "grade" : "A",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b99"),
+        "empid" : 3,
+        "name" : "jkl",
+        "city" : "delhi",
+        "salary" : 15000,
+        "grade" : "B",
+        "age" : 30
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b9a"),
+        "empid" : 5,
+        "name" : "xyz",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 32
+}
+{
+        "_id" : ObjectId("59dc3e6a4b4bb154b52e4b9b"),
+        "empid" : 6,
+        "name" : "abc1",
+        "city" : "delhi",
+        "salary" : 14000,
+        "grade" : "C",
+        "age" : 30
+}
+{
+        "_id" : ObjectId("59dd965d2966fae60026db4a"),
+        "empid" : 7,
+        "name" : "Anil",
+        "city" : "delhi",
+        "age" : 30,
+        "salary" : 40000,
+        "grade" : "A"
+}
+
+8)Add employee Amit with proper key values from collection if not exists to the collection .(Use
+of upsert)
+> db.employee.update({name: "kick"},{empid:8,name:"amit",city:"pune",salary:10000,grade:"A",age:25},{upsert:true})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : ObjectId("59dd98277c5c2b4bdeca8d3e")
+})
+
+________________________________________________________________
+9)Add employee Wasim with proper key values and return the updated document
+
+> db.employe.findOneAndReplace({"name":"wasim"},{id:10,name:"wasim",city:"mumbai",sal
+ary:10000,grade:"A",age:25},{upsert:true,returnNewDocument:true});
+{
+        "_id" : ObjectId("59c9e6b2f1647d6a37a09d2a"),
+        "id" : 10,
+        "name" : "pqrs",
+        "city" : "delhi",
+        "salary" : 10000,
+        "grade" : "A",
+        "age" : 25
+}
+
+___________________________________________________________________
+10) Remove the documents who are from Delhi city.
+
+> db.employee.remove( { city:"delhi" } )
+WriteResult({ "nRemoved" : 3 })
+> db.employee.find().pretty();
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b96"),
+        "empid" : 1,
+        "name" : "abc",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b97"),
+        "empid" : 2,
+        "name" : "def",
+        "city" : "chennai",
+        "salary" : 17000,
+        "grade" : "B",
+        "age" : 17
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b98"),
+        "empid" : 3,
+        "name" : "egh",
+        "city" : "mumbai",
+        "salary" : 35000,
+        "grade" : "A",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("59dc3cdc4b4bb154b52e4b9a"),
+        "empid" : 5,
+        "name" : "xyz",
+        "city" : "pune",
+        "salary" : 30000,
+        "grade" : "A",
+        "age" : 32
+}
+{
+        "_id" : ObjectId("59dd97632966fae60026db4b"),
+        "empid" : 8,
+        "name" : "amit",
+        "city" : "pune",
+        "salary" : 10000,
+        "grade" : "A",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("59dd98277c5c2b4bdeca8d3e"),
+        "empid" : 8,
+        "name" : "amit",
+        "city" : "pune",
+        "salary" : 10000,
+        "grade" : "A",
+        "age" : 25
+}
+>
+
+------******------Assign 2-------******-------
+
+Execute at least 10 queries on following MongoDB database
+
+1)Write a MongoDB query to display all the documents in the collection users.
+> db.student.find().pretty();
+{
+        "_id" : ObjectId("59dd9c3b2966fae60026db4c"),
+        "id" : 1,
+        "name" : "abc",
+        "age" : 20,
+        "status" : "a",
+        "marks" : [
+                40,
+                35
+        ]
+}
+{
+        "_id" : ObjectId("59dd9c572966fae60026db4d"),
+        "id" : 3,
+        "name" : "xyz",
+        "age" : 21,
+        "status" : "a",
+        "marks" : [
+                40,
+                39,
+                23
+        ]
+}
+{
+        "_id" : ObjectId("59dd9c652966fae60026db4e"),
+        "id" : 2,
+        "name" : "def",
+        "age" : 18,
+        "status" : "a",
+        "marks" : [
+                25,
+                35,
+                21
+        ]
+}
+__________________________________________________________________________________
+2)Display the list of documents in the descending order of id.
+
+> db.student.find().sort({id:-1})
+{ "_id" : ObjectId("59dd9c572966fae60026db4d"), "id" : 3, "name" : "xyz", "age" : 21, "status" : "a", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9c652966fae60026db4e"), "id" : 2, "name" : "def", "age" : 18, "status" : "a", "marks" : [ 25, 35, 21 ] }
+{ "_id" : ObjectId("59dd9c3b2966fae60026db4c"), "id" : 1, "name" : "abc", "age" : 20, "status" : "a", "marks" : [ 40, 35 ] }
+>
+___________________________________________________________________________________
+3)Display the documents whose status is A
+>  db.student.find({status:'a'})
+{ "_id" : ObjectId("59dd9c3b2966fae60026db4c"), "id" : 1, "name" : "abc", "age" : 20, "status" : "a", "marks" : [ 40, 35 ] }
+{ "_id" : ObjectId("59dd9c572966fae60026db4d"), "id" : 3, "name" : "xyz", "age" : 21, "status" : "a", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9c652966fae60026db4e"), "id" : 2, "name" : "def", "age" : 18, "status" : "a", "marks" : [ 25, 35, 21 ] }
+
+________
+4)Display the documents whose status is other than A
+>  db.student.find({status:{$ne:'a'}})
+{ "_id" : ObjectId("59dd9d532966fae60026db4f"), "id" : 3, "name" : "abc1", "age" : 21, "status" : "b", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9d5e2966fae60026db50"), "id" : 3, "name" : "xyz2", "age" : 21, "status" : "c", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9d8c2966fae60026db51"), "id" : 3, "name" : "xyz2", "age" : 21, "status" : "c", "marks" : [ 40, 39, 23 ] }
+
+___________________________________________________________________________________
+5)Display the documents with status A and age greater than 15
+
+db.student.find({status:'a',age:{$gt:15}})
+{ "_id" : ObjectId("59dd9c3b2966fae60026db4c"), "id" : 1, "name" : "abc", "age" : 20, "status" : "a", "marks" : [ 40, 35 ] }
+{ "_id" : ObjectId("59dd9c572966fae60026db4d"), "id" : 3, "name" : "xyz", "age" : 21, "status" : "a", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9c652966fae60026db4e"), "id" : 2, "name" : "def", "age" : 18, "status" : "a", "marks" : [ 25, 35, 21 ] }
+
+___________________________________________________________________________________
+6)Display the documents with age in the range of 20 to 50
+db.student.find({age:{$gt:20,$lt:50}})
+{ "_id" : ObjectId("59dd9c572966fae60026db4d"), "id" : 3, "name" : "xyz", "age" : 21, "status" : "a", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9d532966fae60026db4f"), "id" : 3, "name" : "abc1", "age" : 21, "status" : "b", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9d5e2966fae60026db50"), "id" : 3, "name" : "xyz2", "age" : 21, "status" : "c", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9d8c2966fae60026db51"), "id" : 3, "name" : "xyz2", "age" : 21, "status" : "c", "marks" : [ 40, 39, 23 ] }
+
+________
+7)Display the count of documents with age less than 55
+> db.student.count({age:{$lt:55}})
+6
+
+___________________________________________________________________________________
+8)Write a query to the document where the name field has a null value:
+
+> db.student.insert({id:4,name:null,age :40,status:"c",marks:[35,40,20]})
+WriteResult({ "nInserted" : 1 })
+> db.student.find({name:{$exists:false}})
+{ "_id" : ObjectId("59ba170259f543d282bff654"), "id" : 4, "age" : 40, "status" : "c", "marks" : [ 35, 40, 20 ] }
+
+___________________________________________________________________________________
+9)Display the document whose name starts with character s (use of $regx)
+
+WriteResult({ "nInserted" : 1 })
+> db.student.find({name:{$regex:/^a/}})
+{ "_id" : ObjectId("59dd9c3b2966fae60026db4c"), "id" : 1, "name" : "abc", "age" : 20, "status" : "a", "marks" : [ 40, 35 ] }
+{ "_id" : ObjectId("59dd9d532966fae60026db4f"), "id" : 3, "name" : "abc1", "age" : 21, "status" : "b", "marks" : [ 40, 39, 23 ] }
+> db.student.find({name:{$regex:/^sh$/}})
+> db.student.insert({id:4,name:"ssh",age :40,status:"c",marks:[35,40,20]})
+WriteResult({ "nInserted" : 1 })
+> db.student.find({name:{$regex:/^s.*h$/}})
+{ "_id" : ObjectId("59dd9f582966fae60026db55"), "id" : 4, "name" : "ssh", "age" : 40, "status" : "c", "marks" : [ 35, 40, 20 ] }
+
+___________________________________________________________________________________
+11)Display the documents having marks greater than 40
+ db.student.find({marks:{$gt:40}})
+ { "_id" : ObjectId("59ba21d6859f543d28273f653"), "id" : 3, "name" : "mnq", "age" : 18, "status" : "a", "marks" : [ 40, 45, 40 ] }
+ 
+ ___________________________________________________________________________________
+12)Display the documents having marks greater than 30 at 2 nd position in the array
+
+db.student.find({"marks.1":{$gt:30}})
+{ "_id" : ObjectId("59dd9c3b2966fae60026db4c"), "id" : 1, "name" : "abc", "age" : 20, "status" : "a", "marks" : [ 40, 35 ] }
+{ "_id" : ObjectId("59dd9c572966fae60026db4d"), "id" : 3, "name" : "xyz", "age" : 21, "status" : "a", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9c652966fae60026db4e"), "id" : 2, "name" : "def", "age" : 18, "status" : "a", "marks" : [ 25, 35, 21 ] }
+{ "_id" : ObjectId("59dd9d532966fae60026db4f"), "id" : 3, "name" : "abc1", "age" : 21, "status" : "b", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9d5e2966fae60026db50"), "id" : 3, "name" : "xyz2", "age" : 21, "status" : "c", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9d8c2966fae60026db51"), "id" : 3, "name" : "xyz2", "age" : 21, "status" : "c", "marks" : [ 40, 39, 23 ] }
+{ "_id" : ObjectId("59dd9e7c2966fae60026db52"), "id" : 4, "name" : null, "age" : 40, "status" : "c", "marks" : [ 35, 40, 20 ] }
+{ "_id" : ObjectId("59dd9e9d2966fae60026db53"), "id" : 7, "name" : null, "age" : 40, "status" : "c", "marks" : [ 35, 40, 20 ] }
+{ "_id" : ObjectId("59dd9ee42966fae60026db54"), "id" : 4, "name" : "sss", "age" : 40, "status" : "c", "marks" : [ 35, 40, 20 ] }
+{ "_id" : ObjectId("59dd9f582966fae60026db55"), "id" : 4, "name" : "ssh", "age" : 40, "status" : "c", "marks" : [ 35, 40, 20 ] }
+
+db.createCollection("customer")
+{ "ok" : 1 }
+> db.customer.insert({id:1,name:"xyz",credit:500,debit:500})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:2,name:"abc",credit:500,debit:700})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:3,name:"def",credit:400,debit:800})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:4,name:"ghi",credit:400,debit:400})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:5,name:"jkl",credit:700,debit:400})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:6,name:"mno",credit:600,debit:600})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:7,name:"pqrs",credit:600,debit:900})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:8,name:"abc1",credit:600,debit:300})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:9,name:"xyz1",credit:200,debit:300})
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({id:10,name:"ghi1",credit:500,debit:700})
+WriteResult({ "nInserted" : 1 })
+________________________________________________________________________
+1)Display the list of customers having same credit and debit values
+
+>  db.customer.find({$where:"this.credit==this.debit"});
+{ "_id" : ObjectId("59ba19f259f543d282bff656"), "id" : 1, "name" : "xyz", "credit" : 500, "debit" : 500 }
+{ "_id" : ObjectId("59ba1a5359f543d282bff659"), "id" : 4, "name" : "ghi", "credit" : 400, "debit" : 400 }
+{ "_id" : ObjectId("59ba1a7c59f543d282bff65b"), "id" : 6, "name" : "mno", "credit" : 600, "debit" : 600 }
+________________________________________________________________________
+2)Display the list of customers having high credit and low debit values
+using functions.
+
+> db.customer.find("this.credit>this.debit");
+{ "_id" : ObjectId("59ba1a6759f543d282bff65a"), "id" : 5, "name" : "jkl", "credit" : 700, "debit" : 400 }
+{ "_id" : ObjectId("59ba1aaa59f543d282bff65d"), "id" : 8, "name" : "abc1", "credit" : 600, "debit" : 300 }
+_________________________________________________________________________
+3)Display the list of customers having same credit and debit values or
+greater debit value than credit values using function
+
+>  db.customer.find("this.creadit==this.debit || this.creadit>this.debit");
+> db.customer.find("this.credit==this.debit || this.debit>this.credit");
+{ "_id" : ObjectId("59ba19f259f543d282bff656"), "id" : 1, "name" : "xyz", "credit" : 500, "debit" : 500 }
+{ "_id" : ObjectId("59ba1a2b59f543d282bff657"), "id" : 2, "name" : "abc", "credit" : 500, "debit" : 700 }
+{ "_id" : ObjectId("59ba1a4159f543d282bff658"), "id" : 3, "name" : "def", "credit" : 400, "debit" : 800 }
+{ "_id" : ObjectId("59ba1a5359f543d282bff659"), "id" : 4, "name" : "ghi", "credit" : 400, "debit" : 400 }
+{ "_id" : ObjectId("59ba1a7c59f543d282bff65b"), "id" : 6, "name" : "mno", "credit" : 600, "debit" : 600 }
+{ "_id" : ObjectId("59ba1a8f59f543d282bff65c"), "id" : 7, "name" : "pqrs", "credit" : 600, "debit" : 900 }
+{ "_id" : ObjectId("59ba1abc59f543d282bff65e"), "id" : 9, "name" : "xyz1", "credit" : 200, "debit" : 300 }
+{ "_id" : ObjectId("59ba1ad159f543d282bff65f"), "id" : 10, "name" : "ghi1", "credit" : 500, "debit" : 700 }
+_________________________________________________________________________
+5)Display the list of first five customers
+
+> db.customer.find().limit(5)
+{ "_id" : ObjectId("59ba19f259f543d282bff656"), "id" : 1, "name" : "xyz", "credit" : 500, "debit" : 500 }
+{ "_id" : ObjectId("59ba1a2b59f543d282bff657"), "id" : 2, "name" : "abc", "credit" : 500, "debit" : 700 }
+{ "_id" : ObjectId("59ba1a4159f543d282bff658"), "id" : 3, "name" : "def", "credit" : 400, "debit" : 800 }
+{ "_id" : ObjectId("59ba1a5359f543d282bff659"), "id" : 4, "name" : "ghi", "credit" : 400, "debit" : 400 }
+{ "_id" : ObjectId("59ba1a6759f543d282bff65a"), "id" : 5, "name" : "jkl", "credit" : 700, "debit" : 400 }
+_________________________________________________________________________
+6)Display 8and 9 no. customers from the collection
+
+> db.customer.find().skip(7).limit(2);
+{ "_id" : ObjectId("59ba1aaa59f543d282bff65d"), "id" : 8, "name" : "abc1", "credit" : 600, "debit" : 300 }
+{ "_id" : ObjectId("59ba1abc59f543d282bff65e"), "id" : 9, "name" : "xyz1", "credit" : 200, "debit" : 300 }
+_________________________________________________________________________
+7)Display the list of customers in ascending order of city.
+
+> db.customer.find().sort({name:1})
+{ "_id" : ObjectId("59ba1a8f59f543d282bff65c"), "id" : 7, "name" : "pqrs", "credit" : 600, "debit" : 900 }
+{ "_id" : ObjectId("59ba1aaa59f543d282bff65d"), "id" : 8, "name" : "abc1", "credit" : 600, "debit" : 300 }
+{ "_id" : ObjectId("59ba19f259f543d282bff656"), "id" : 1, "name" : "xyz", "credit" : 500, "debit" : 500 }
+{ "_id" : ObjectId("59ba1a6759f543d282bff65a"), "id" : 5, "name" : "jkl", "credit" : 700, "debit" : 400 }
+{ "_id" : ObjectId("59ba1ad159f543d282bff65f"), "id" : 10, "name" : "ghi1", "credit" : 500, "debit" : 700 }
+{ "_id" : ObjectId("59ba1a5359f543d282bff659"), "id" : 4, "name" : "ghi", "credit" : 400, "debit" : 400 }
+{ "_id" : ObjectId("59ba1a4159f543d282bff658"), "id" : 3, "name" : "def", "credit" : 400, "debit" : 800 }
+{ "_id" : ObjectId("59ba1a7c59f543d282bff65b"), "id" : 6, "name" : "mno", "credit" : 600, "debit" : 600 }
+{ "_id" : ObjectId("59ba1a2b59f543d282bff657"), "id" : 2, "name" : "abc", "credit" : 500, "debit" : 700 }
+{ "_id" : ObjectId("59ba1abc59f543d282bff65e"), "id" : 9, "name" : "xyz1", "credit" : 200, "debit" : 300 }
+__________________________________________________________________________
+8)Query to Rename the collection to new_customer
+
+> db.customer.renameCollection("new_customer")
+{ "ok" : 1 }
+__________________________________________________________________________
+9)Display the mongodb configuration details
+
+> use admin
+switched to db admin
+> db.runcommand({buildInfo:1})
+2017-09-14T12:00:56.300+0530 E QUERY    [thread1] TypeError: db.runcommand is not a function :
+@(shell):1:1
+
+> db.runCommand({buildInfo:1})
+{
+        "version" : "3.2.16-7-g987e05d",
+        "gitVersion" : "987e05d7a7a3a2dee468cc96c0faaa0ea6344ed2",
+        "targetMinOS" : "Windows Vista/Windows Server 2008",
+        "modules" : [ ],
+        "allocator" : "tcmalloc",
+        "javascriptEngine" : "mozjs",
+        "sysInfo" : "deprecated",
+        "versionArray" : [
+                3,
+                2,
+                17,
+                -100
+        ],
+        "openssl" : {
+                "running" : "disabled",
+                "compiled" : "disabled"
+        },
+        "buildEnvironment" : {
+                "distmod" : "",
+                "distarch" : "i386",
+                "cc" : "cl: Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86",
+                "ccflags" : "/nologo /EHsc /W3 /wd4355 /wd4800 /wd4267 /wd4244 /wd4290 /wd4068 /wd4351 /we4013 /we4099 /we4930 /Z7 /errorReport:none /MT /O2 /Oy- /Gw /Gy
+/Zc:inline",
+                "cxx" : "cl: Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86",
+                "cxxflags" : "/TP",
+                "linkflags" : "/nologo /DEBUG /INCREMENTAL:NO /LARGEADDRESSAWARE /OPT:REF",
+                "target_arch" : "i386",
+                "target_os" : "windows"
+        },
+        "bits" : 32,
+        "debug" : false,
+        "maxBsonObjectSize" : 16777216,
+        "storageEngines" : [
+                "devnull",
+                "ephemeralForTest",
+                "mmapv1"
+        ],
+        "ok" : 1
+}
+>
+_________________________________________________________________________
+10)
+> db.new_customer.drop()
+true
+
+Assignment 4
+4. Implement Map reduce example for customer collection.
+_______________________________________________________________________________________
+> db.createCollection("Cus")
+{ "ok" : 1 }
+> db.Cus.insert({c_id:"x11",o_date: new Date("aug 28,2017"), status :'A',price:800})
+WriteResult({ "nInserted" : 1 })
+> db.Cus.insert({c_id:"x11",o_date: new Date("aug 28,2017"), status :'A',price:700})
+WriteResult({ "nInserted" : 1 })
+> db.Cus.insert({c_id:"y11",o_date: new Date("aug 28,2017"), status :'A',price:500})
+WriteResult({ "nInserted" : 1 })
+> var mapFunction1=function(){emit(this.c_id,this.price);};
+> var reduceFunction1=function(keyCustId,valuesPrices){return Array.sum(valuesPrices)
+;};
+> db.Cus.mapReduce(mapFunction1,reduceFunction1,{out: "map_reduce_example"})
+{
+        "result" : "map_reduce_example",
+        "timeMillis" : 38,
+        "counts" : {
+                "input" : 3,
+                "emit" : 3,
+                "reduce" : 1,
+                "output" : 2
+        },
+        "ok" : 1
+}
+> db.map_reduce_example.find();
+{ "_id" : "x11", "value" : 1500 }
+{ "_id" : "y11", "value" : 500 }
+>
+
+> db.createCollection("Product");
+{ "ok" : 1 }
+> db.Product.insert({id:1,item_nm:"abc",quantity:10,price:200});
+WriteResult({ "nInserted" : 1 })
+> db.Product.insert({id:2,item_nm:"xyz",quantity:12,price:300});
+WriteResult({ "nInserted" : 1 })
+> db.Product.insert({id:3,item_nm:"lmn",quantity:15,price:500});
+WriteResult({ "nInserted" : 1 })
+> db.Product.insert({id:4,item_nm:"pqr",quantity:25,price:600});
+WriteResult({ "nInserted" : 1 })
+___________________________________________________________________
+1)Single Index
+
+> db.Product.createIndex({id:1})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+_________________________________________________________________
+2)Compund Index
+
+> db.Product.createIndex({price:-1,item_nm:1})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 2,
+        "numIndexesAfter" : 3,
+        "ok" : 1
+}
+_________________________________________________________________
+3)Display Index
+> db.Product.getIndexes();
+[
+        {
+                "v" : 1,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_",
+                "ns" : "test.Product"
+        },
+        {
+                "v" : 1,
+                "key" : {
+                        "id" : 1
+                },
+                "name" : "id_1",
+                "ns" : "test.Product"
+        },
+        {
+                "v" : 1,
+                "key" : {
+                        "price" : -1,
+                        "item_nm" : 1
+                },
+                "name" : "price_-1_item_nm_1",
+                "ns" : "test.Product"
+        }
+]
+_________________________________________________________________
+4)Dropping an index:
+
+> db.Product.dropIndex("id_1");
+{ "nIndexesWas" : 3, "ok" : 1 }
+> db.Product.getIndexes();
+[
+        {
+                "v" : 1,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_",
+                "ns" : "test.Product"
+        },
+        {
+                "v" : 1,
+                "key" : {
+                        "price" : -1,
+                        "item_num" : 1
+                },
+                "name" : "price_-1_item_num_1",
+                "ns" : "test.Product"
+        }
+]
+_________________________________________________________________
+5)Avg
+> db.Product.aggregate([{$group:{ _id: "$item_nm",avgAmount: { $avg: { $multiply: [ "
+$price", "$quantity" ] } },avgQuantity: { $avg: "$quantity" }}}] )
+{ "_id" : "pqr", "avgAmount" : 15000, "avgQuantity" : 25 }
+{ "_id" : "lmn", "avgAmount" : 7500, "avgQuantity" : 15 }
+{ "_id" : "xyz", "avgAmount" : 3600, "avgQuantity" : 12 }
+{ "_id" : "abc", "avgAmount" : 2000, "avgQuantity" : 10 }
+__________________________________________________________________
+6)Min
+> db.Product.aggregate([{$group:{_id: "$item_nm",minQuantity: { $min: "$quantity" }}}
+])
+{ "_id" : "pqr", "minQuantity" : 25 }
+{ "_id" : "lmn", "minQuantity" : 15 }
+{ "_id" : "xyz", "minQuantity" : 12 }
+{ "_id" : "abc", "minQuantity" : 10 }
+__________________________________________________________________
+7)Max
+> db.Product.aggregate([{$group:{_id: "$item_nm",minQuantity: { $max: "$quantity" }}}
+])
+{ "_id" : "pqr", "minQuantity" : 25 }
+{ "_id" : "lmn", "minQuantity" : 15 }
+{ "_id" : "xyz", "minQuantity" : 12 }
+{ "_id" : "abc", "minQuantity" : 10 }
