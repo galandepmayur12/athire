@@ -1,0 +1,2 @@
+# athire
+A Project build on a base to support the potential talents and help them in the journey to the actual world. This site was built to act as a bridge between the people who needs manpower and people who have the talent and potential and can work and also to reduce the overhead for the people to search people for the job and vice versa. The prototype for the project is ready and is under testing phase with real life and looking for investment for deployment.
